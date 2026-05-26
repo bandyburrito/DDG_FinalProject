@@ -1,10 +1,6 @@
-# aBondisJourney_Rogueslop
+# Digital Development of Games Final Project    
 
 
-Elemental Stage;
+The game has been swapping a lot through different itirations, what once started as a Mewgenics and Into the Breach copy with 
+Pokemon Elements for combat enhancment, is now turning into a topdown version of that and in a more traditional way more similar with TBRPG's.
 
-Trying to work on this game as a part of the Final Project for module of Development of Digital Games.
-
-The game has 4 different biomes of enviorments in which the player will be playing in, first it starts as one and progresses into potentially having 4 areas at the same time in a single round.
-
-The game will be played in Turnbased Combat in the style of Into the Breach and Mewgenics. Where characters take turns to do their limited actions against each other
