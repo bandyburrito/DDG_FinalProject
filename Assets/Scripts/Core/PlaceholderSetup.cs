@@ -10,6 +10,12 @@ public class PlaceholderSetup : MonoBehaviour
     private static Sprite _square;
     private static Sprite _diamond;
 
+    /// <summary>
+    /// When true, a run starts automatically the frame after the scene loads (used by
+    /// RestartGame). When false, we boot into the MainMenu and wait for the Start button.
+    /// </summary>
+    public static bool StartGameOnLoad = false;
+
     void Awake()
     {
         _square  = MakeSquareSprite();
@@ -76,7 +82,13 @@ public class PlaceholderSetup : MonoBehaviour
     IEnumerator Start()
     {
         yield return null; // wait one frame so all Start() methods fire first
-        GameManager.Instance.StartNewGame();
+        // Boot into the MainMenu by default. RestartGame sets StartGameOnLoad so a reload
+        // jumps straight back into a fresh run instead of the menu.
+        if (StartGameOnLoad)
+        {
+            StartGameOnLoad = false;
+            GameManager.Instance.StartNewGame();
+        }
     }
 
     // ── Sprite helpers ─────────────────────────────────────────────────────
@@ -157,13 +169,17 @@ public class PlaceholderSetup : MonoBehaviour
         return go;
     }
 
-    /// <summary>Overlay/highlight tile — shares the ground sprite but tinted with an alpha colour.</summary>
+    /// <summary>
+    /// Overlay/highlight tile — always uses the flat procedural diamond so the highlight
+    /// covers ONLY the top face of an isometric tile, not the cube sides. Tinting the full
+    /// cube sprite would make adjacent neighbour faces look attackable too, which is a
+    /// false-positive read for the player.
+    /// </summary>
     static GameObject MakeOverlayPrefab(string name, string resourceName, Color tint)
     {
         var go = new GameObject(name);
         var sr = go.AddComponent<SpriteRenderer>();
-        var loaded = SpriteLoader.LoadTile(resourceName);
-        sr.sprite = loaded != null ? loaded : _diamond;
+        sr.sprite = _diamond;   // flat top-face shape only — ignore resourceName
         sr.color  = tint;
         go.SetActive(false);
         return go;
@@ -187,6 +203,7 @@ public class PlaceholderSetup : MonoBehaviour
         }
         var ai = go.AddComponent<EnemyAI>();
         ai.enemyType = type;
+        go.AddComponent<HpBar>();   // small floating HP bar above the enemy
         go.SetActive(false);
         return go;
     }
@@ -209,6 +226,7 @@ public class PlaceholderSetup : MonoBehaviour
         }
         var ai = go.AddComponent<CompanionAI>();
         ai.companionType = type;
+        go.AddComponent<HpBar>();   // companions get the same floating HP bar
         go.SetActive(false);
         return go;
     }

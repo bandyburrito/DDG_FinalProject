@@ -16,8 +16,11 @@ public class TurnManager : MonoBehaviour
     private List<Entity> _turnOrder   = new();
     private int          _currentIndex = 0;
 
-    public Entity CurrentEntity => _turnOrder.Count > 0 && _currentIndex < _turnOrder.Count ? _turnOrder[_currentIndex] : null;
+    public Entity CurrentEntity => _turnOrder.Count > 0 && _currentIndex >= 0 && _currentIndex < _turnOrder.Count ? _turnOrder[_currentIndex] : null;
     public bool IsPlayerTurn => CurrentEntity is PlayerController;
+
+    /// <summary>Read-only access for the HUD turn-order display.</summary>
+    public int CurrentIndex => _currentIndex;
 
     void Awake()
     {
@@ -33,8 +36,21 @@ public class TurnManager : MonoBehaviour
     public void UnregisterEntity(Entity e)
     {
         _allEntities.Remove(e);
-        _turnOrder.Remove(e);
-        if (_currentIndex >= _turnOrder.Count) _currentIndex = 0;
+
+        int idx = _turnOrder.IndexOf(e);
+        if (idx < 0) return;
+
+        _turnOrder.RemoveAt(idx);
+
+        // When something is removed from _turnOrder, every entity after it shifts down
+        // by one. If the removed entity sat AT OR BEFORE the currently-processing slot,
+        // decrement _currentIndex so AdvanceTurn's ++ lands on the entity that was
+        // originally at idx+1 (now at idx). Otherwise we'd silently skip a turn — or,
+        // worse, the index walks off the list and the turn loop wedges.
+        //
+        // _currentIndex can legitimately become -1 here (e.g. the entity at idx 0 dies
+        // during its own turn). The next AdvanceTurn brings it back to 0.
+        if (idx <= _currentIndex) _currentIndex--;
     }
 
     public void ClearAll()
@@ -71,11 +87,14 @@ public class TurnManager : MonoBehaviour
     {
         if (_turnOrder.Count == 0) yield break;
 
-        // Skip dead entities
-        while (_currentIndex < _turnOrder.Count && !_turnOrder[_currentIndex].IsAlive)
+        // Skip dead / null entities. Guard the lower bound — _currentIndex can be -1
+        // briefly after UnregisterEntity removes the current slot.
+        while (_currentIndex >= 0
+               && _currentIndex < _turnOrder.Count
+               && (_turnOrder[_currentIndex] == null || !_turnOrder[_currentIndex].IsAlive))
             _currentIndex++;
 
-        if (_currentIndex >= _turnOrder.Count)
+        if (_currentIndex < 0 || _currentIndex >= _turnOrder.Count)
         {
             TelegraphSystem.Instance?.ClearAll();
             yield return new WaitForSeconds(0.2f);

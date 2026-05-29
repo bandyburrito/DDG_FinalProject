@@ -14,6 +14,13 @@ public class GameManager : MonoBehaviour
     public int CurrentWave { get; private set; } = 0;
     public GameState State { get; private set; } = GameState.MainMenu;
 
+    /// <summary>True while the run is paused (Time.timeScale frozen). Pause is an overlay
+    /// on top of gameplay states — it does not change <see cref="State"/>.</summary>
+    public bool IsPaused { get; private set; }
+
+    /// <summary>Master volume 0..1, mirrored to AudioListener.volume and persisted.</summary>
+    public float MasterVolume { get; private set; } = 1f;
+
     /// <summary>Permadeath companions for this run. Persist across rooms.</summary>
     public List<CompanionAI> ActiveCompanions { get; } = new();
 
@@ -21,10 +28,75 @@ public class GameManager : MonoBehaviour
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
+        ApplySavedSettings();
+    }
+
+    // ── Pause ───────────────────────────────────────────────────────────────────
+
+    /// <summary>Gameplay states where pausing is allowed (not menus / end screens).</summary>
+    private bool CanPause =>
+        State == GameState.Combat || State == GameState.WaveTransition ||
+        State == GameState.UpgradeScreen || State == GameState.CompanionScreen;
+
+    public void TogglePause()
+    {
+        if (!IsPaused && !CanPause) return;
+        SetPaused(!IsPaused);
+    }
+
+    public void SetPaused(bool paused)
+    {
+        IsPaused = paused;
+        // Freezing timeScale halts WaitForSeconds in the turn coroutines and animations,
+        // so the turn-based flow resumes exactly where it left off when unpaused.
+        Time.timeScale = paused ? 0f : 1f;
+    }
+
+    // ── Settings (persisted via PlayerPrefs) ─────────────────────────────────────
+
+    private void ApplySavedSettings()
+    {
+        MasterVolume = Mathf.Clamp01(PlayerPrefs.GetFloat("MasterVolume", 1f));
+        AudioListener.volume = MasterVolume;
+        Screen.fullScreen = PlayerPrefs.GetInt("Fullscreen", 1) == 1;
+    }
+
+    public void SetMasterVolume(float v)
+    {
+        MasterVolume = Mathf.Clamp01(v);
+        AudioListener.volume = MasterVolume;
+        PlayerPrefs.SetFloat("MasterVolume", MasterVolume);
+    }
+
+    public void SetFullscreen(bool fullscreen)
+    {
+        Screen.fullScreen = fullscreen;
+        PlayerPrefs.SetInt("Fullscreen", fullscreen ? 1 : 0);
+    }
+
+    // ── App / navigation ─────────────────────────────────────────────────────────
+
+    public void ReturnToMainMenu()
+    {
+        Time.timeScale = 1f;
+        IsPaused = false;
+        PlaceholderSetup.StartGameOnLoad = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void QuitGame()
+    {
+        Time.timeScale = 1f;
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 
     public void StartNewGame()
     {
+        SetPaused(false);
         TurnManager.Instance.OnAllEnemiesDead -= OnWaveCleared;
         TurnManager.Instance.OnAllEnemiesDead += OnWaveCleared;
 
@@ -126,6 +198,10 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+        Time.timeScale = 1f;
+        IsPaused = false;
+        // Reload the scene for a clean slate, then auto-start a fresh run once it's loaded.
+        PlaceholderSetup.StartGameOnLoad = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

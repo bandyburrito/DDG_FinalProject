@@ -201,7 +201,11 @@ public class GridManager : MonoBehaviour
                 if (visited.ContainsKey(nb)) continue;
                 var tile = GetTile(nb);
                 if (tile == null || tile.type == TileType.Obstacle || tile.type == TileType.Void) continue;
-                if (!ignoreOccupants && tile.occupant != null && nb != goal) continue;
+                // Never route through OR land on a tile another character occupies.
+                // (Previously the goal was exempted via `nb != goal`, which let two entities
+                // plan onto the same tile and end up stacked — telegraphs are computed at
+                // round start, so a planned destination can be taken before the turn runs.)
+                if (!ignoreOccupants && tile.occupant != null) continue;
                 visited[nb] = current;
                 queue.Enqueue(nb);
             }
@@ -244,4 +248,40 @@ public class GridManager : MonoBehaviour
 
     public int ChebyshevDistance(Vector2Int a, Vector2Int b) =>
         Mathf.Max(Mathf.Abs(a.x - b.x), Mathf.Abs(a.y - b.y));
+
+    /// <summary>
+    /// Depth-limited BFS — returns every tile reachable from <paramref name="start"/> in
+    /// ≤ <paramref name="maxSteps"/> cardinal moves. Used by the move-highlight system so
+    /// the highlights only mark tiles the player can actually walk to. The previous
+    /// implementation used Chebyshev distance, which includes diagonals — but pathfinding
+    /// is 4-directional, so the player would stop short on any tile that requires a turn.
+    /// </summary>
+    public List<Vector2Int> GetReachableTiles(Vector2Int start, int maxSteps, bool ignoreOccupants = false)
+    {
+        var result = new List<Vector2Int>();
+        var depth  = new Dictionary<Vector2Int, int> { [start] = 0 };
+        var queue  = new Queue<Vector2Int>();
+        queue.Enqueue(start);
+
+        while (queue.Count > 0)
+        {
+            var current = queue.Dequeue();
+            int d = depth[current];
+            if (d >= maxSteps) continue;
+
+            foreach (var nb in GetCardinalNeighbours(current))
+            {
+                if (depth.ContainsKey(nb)) continue;
+                var tile = GetTile(nb);
+                if (tile == null) continue;
+                if (tile.type == TileType.Obstacle || tile.type == TileType.Void) continue;
+                if (!ignoreOccupants && tile.occupant != null) continue;
+
+                depth[nb] = d + 1;
+                queue.Enqueue(nb);
+                result.Add(nb);
+            }
+        }
+        return result;
+    }
 }

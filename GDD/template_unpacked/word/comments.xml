@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<w:comments xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 wp14">
+  <w:comment w:id="12" w:author="Andre" w:date="2014-01-08T09:16:00Z" w:initials="A">
+    <w:p w:rsidR="00B461D3" w:rsidRDefault="00B461D3" w:rsidP="00035DE9">
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+        </w:rPr>
+        <w:annotationRef/>
+      </w:r>
+      <w:r>
+        <w:t>How does the player move through the game? Both through the interface and the game itself.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="00B461D3" w:rsidRDefault="00B461D3">
+      <w:pPr>
+        <w:pStyle w:val="CommentText"/>
+      </w:pPr>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="14" w:author="Andre" w:date="2014-01-08T09:16:00Z" w:initials="A">
+    <w:p w:rsidR="00B461D3" w:rsidRPr="00E21186" w:rsidRDefault="00B461D3" w:rsidP="00035DE9">
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+        </w:rPr>
+        <w:annotationRef/>
+      </w:r>
+      <w:r w:rsidRPr="00E21186">
+        <w:t>What is the basic look and feel of the game?  What is the visual style?</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="00B461D3" w:rsidRDefault="00B461D3">
+      <w:pPr>
+        <w:pStyle w:val="CommentText"/>
+      </w:pPr>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="25" w:author="Andre" w:date="2014-01-08T09:18:00Z" w:initials="A">
+    <w:p w:rsidR="00B461D3" w:rsidRDefault="00B461D3">
+      <w:pPr>
+        <w:pStyle w:val="CommentText"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+        </w:rPr>
+        <w:annotationRef/>
+      </w:r>
+      <w:r>
+        <w:t>What are the objectives of the game?</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="27" w:author="Andre" w:date="2014-01-08T09:18:00Z" w:initials="A">
+    <w:p w:rsidR="00B461D3" w:rsidRDefault="00B461D3">
+      <w:pPr>
+        <w:pStyle w:val="CommentText"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+        </w:rPr>
+        <w:annotationRef/>
+      </w:r>
+      <w:r>
+        <w:t>How does the game flow for the game player</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="29" w:author="Andre" w:date="2014-01-07T15:38:00Z" w:initials="A">
+    <w:p w:rsidR="00B461D3" w:rsidRDefault="00B461D3" w:rsidP="00005F7E">
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+        </w:rPr>
+        <w:annotationRef/>
+      </w:r>
+      <w:r>
+        <w:t>What are the rules to the game, both implicit and explicit.  This is the model of the universe that the game works under.  Think of it as a simulation of a world, how do all the pieces interact?  This can be a very large section.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="00B461D3" w:rsidRDefault="00B461D3">
+      <w:pPr>
+        <w:pStyle w:val="CommentText"/>
+      </w:pPr>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="31" w:author="Andre" w:date="2014-01-08T09:19:00Z" w:initials="A">
+    <w:p w:rsidR="00B461D3" w:rsidRDefault="00B461D3">
+      <w:pPr>
+        <w:pStyle w:val="CommentText"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+        </w:rPr>
+        <w:annotationRef/>
+      </w:r>
+      <w:r>
+        <w:t>How does the physical universe work?</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="36" w:author="Andre" w:date="2014-01-08T09:19:00Z" w:initials="A">
+    <w:p w:rsidR="00B461D3" w:rsidRDefault="00B461D3">
+      <w:pPr>
+        <w:pStyle w:val="CommentText"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+        </w:rPr>
+        <w:annotationRef/>
+      </w:r>
+      <w:r>
+        <w:t>If there is combat or even conflict, how is this specifically modeled?</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="38" w:author="Andre" w:date="2014-01-08T09:19:00Z" w:initials="A">
+    <w:p w:rsidR="00B461D3" w:rsidRDefault="00B461D3">
+      <w:pPr>
+        <w:pStyle w:val="CommentText"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+        </w:rPr>
+        <w:annotationRef/>
+      </w:r>
+      <w:r>
+        <w:t>What is the economy of the game? How does it work?</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="41" w:author="Andre" w:date="2014-01-08T09:19:00Z" w:initials="A">
+    <w:p w:rsidR="00B461D3" w:rsidRDefault="00B461D3">
+      <w:pPr>
+        <w:pStyle w:val="CommentText"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+        </w:rPr>
+        <w:annotationRef/>
+      </w:r>
+      <w:r>
+        <w:t>A graphical description of how each screen is related to every other</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="43" w:author="Andre" w:date="2014-01-08T09:20:00Z" w:initials="A">
+    <w:p w:rsidR="00B461D3" w:rsidRDefault="00B461D3">
+      <w:pPr>
+        <w:pStyle w:val="CommentText"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+        </w:rPr>
+        <w:annotationRef/>
+      </w:r>
+      <w:r>
+        <w:t>What is the purpose of each screen?</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="45" w:author="Andre" w:date="2014-01-08T09:20:00Z" w:initials="A">
+    <w:p w:rsidR="00B461D3" w:rsidRDefault="00B461D3">
+      <w:pPr>
+        <w:pStyle w:val="CommentText"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+        </w:rPr>
+        <w:annotationRef/>
+      </w:r>
+      <w:r>
+        <w:t>What are the options and how do they affect game play and mechanics?</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="50" w:author="Andre" w:date="2014-01-07T15:37:00Z" w:initials="A">
+    <w:p w:rsidR="00B461D3" w:rsidRDefault="00B461D3">
+      <w:pPr>
+        <w:pStyle w:val="CommentText"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+        </w:rPr>
+        <w:annotationRef/>
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve">Specific details like scripts and cut scenes may not be in this document but be in the Story Bible.  </w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="65" w:author="Andre" w:date="2014-01-08T09:20:00Z" w:initials="A">
+    <w:p w:rsidR="00B461D3" w:rsidRDefault="00B461D3">
+      <w:pPr>
+        <w:pStyle w:val="CommentText"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+        </w:rPr>
+        <w:annotationRef/>
+      </w:r>
+      <w:r>
+        <w:t>Cut scene?  Mission briefing?</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="81" w:author="Andre" w:date="2014-01-07T15:34:00Z" w:initials="A">
+    <w:p w:rsidR="00B461D3" w:rsidRDefault="00B461D3">
+      <w:pPr>
+        <w:pStyle w:val="CommentText"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+        </w:rPr>
+        <w:annotationRef/>
+      </w:r>
+      <w:r>
+        <w:t>How does the game player control the game?   What are the specific commands?</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="88" w:author="Andre" w:date="2014-01-07T15:33:00Z" w:initials="A">
+    <w:p w:rsidR="00B461D3" w:rsidRDefault="00B461D3">
+      <w:pPr>
+        <w:pStyle w:val="CommentText"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+        </w:rPr>
+        <w:annotationRef/>
+      </w:r>
+      <w:r>
+        <w:t>The active opponent that plays against the game player and therefore requires strategic decision making (example, Civilization or Chess, how is it to be designed?</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="96" w:author="Andre" w:date="2014-01-07T15:33:00Z" w:initials="A">
+    <w:p w:rsidR="00B461D3" w:rsidRDefault="00B461D3">
+      <w:pPr>
+        <w:pStyle w:val="CommentText"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+        </w:rPr>
+        <w:annotationRef/>
+      </w:r>
+      <w:r w:rsidRPr="00D86EAD">
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="18"/>
+        </w:rPr>
+        <w:t xml:space="preserve">This may be abbreviated with </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="18"/>
+        </w:rPr>
+        <w:t>content from the</w:t>
+      </w:r>
+      <w:r w:rsidRPr="00D86EAD">
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="18"/>
+        </w:rPr>
+        <w:t xml:space="preserve"> Technical Bible</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="105" w:author="Andre" w:date="2014-01-07T15:33:00Z" w:initials="A">
+    <w:p w:rsidR="00B461D3" w:rsidRDefault="00B461D3">
+      <w:pPr>
+        <w:pStyle w:val="CommentText"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+        </w:rPr>
+        <w:annotationRef/>
+      </w:r>
+      <w:r w:rsidRPr="00A82C12">
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="18"/>
+        </w:rPr>
+        <w:t xml:space="preserve">This may be abbreviated with </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="18"/>
+        </w:rPr>
+        <w:t xml:space="preserve">content from </w:t>
+      </w:r>
+      <w:r w:rsidRPr="00A82C12">
+        <w:rPr>
+          <w:b/>
+          <w:sz w:val="18"/>
+        </w:rPr>
+        <w:t>an Art Bible</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+</w:comments>

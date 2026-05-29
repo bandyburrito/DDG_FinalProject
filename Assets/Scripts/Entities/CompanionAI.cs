@@ -60,8 +60,8 @@ public class CompanionAI : Entity
                 for (int i = 0; i < steps; i++)
                 {
                     if (!IsAlive) yield break;
-                    MoveTo(path[i]);
-                    yield return new WaitForSeconds(0.1f);
+                    // Host the per-tile walk on TurnManager — survives our death (Pit, friendly fire, etc.)
+                    yield return TurnManager.Instance.StartCoroutine(WalkToTileSmooth(path[i], 0.14f));
                 }
             }
         }
@@ -126,10 +126,15 @@ public class CompanionAI : Entity
             .OrderBy(p => GridManager.Instance.ManhattanDistance(GridPos, p))
             .ToList();
         if (adjacents.Count == 0) return GridPos;
-        var path = GridManager.Instance.FindPath(GridPos, adjacents[0]);
-        if (path == null || path.Count == 0) return GridPos;
-        int steps = Mathf.Min(moveRange, path.Count);
-        return path[steps - 1];
+        // Try each approach slot nearest-first so a blocked slot doesn't stall us.
+        foreach (var slot in adjacents)
+        {
+            var path = GridManager.Instance.FindPath(GridPos, slot);
+            if (path == null || path.Count == 0) continue;
+            int steps = Mathf.Min(moveRange, path.Count);
+            return path[steps - 1];
+        }
+        return GridPos;
     }
 
     private void AttackPhase(EnemyAI target)

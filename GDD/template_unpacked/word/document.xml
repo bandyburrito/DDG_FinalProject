@@ -1,0 +1,1581 @@
+<?xml version="1.0" encoding="UTF-8"?><w:document xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 wp14">
+  <w:body>
+    <w:p w:rsidR="00E21186" w:rsidRDefault="00E21186" w:rsidP="00E21186">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+    </w:p>
+    <w:p w:rsidR="00E21186" w:rsidRDefault="00E21186" w:rsidP="00E21186">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+    </w:p>
+    <w:p w:rsidR="00E21186" w:rsidRDefault="00E21186" w:rsidP="00E21186">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+    </w:p>
+    <w:p w:rsidR="00E21186" w:rsidRDefault="00E21186" w:rsidP="00E21186">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+    </w:p>
+    <w:p w:rsidR="00E21186" w:rsidRDefault="00E21186" w:rsidP="00E21186">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="0" w:name="_Toc376936202"/>
+      <w:r>
+        <w:t>GAME NAME</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="0"/>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="00E21186" w:rsidP="00E21186">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="1" w:name="_Toc376936203"/>
+      <w:r>
+        <w:t>Game Design Document (template)</w:t>
+      </w:r>
+      
+      <w:bookmarkEnd w:id="1"/>
+    </w:p>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00E21186">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="2" w:name="_Toc376936204"/>
+      <w:r>
+        <w:lastRenderedPageBreak/>
+        <w:t>Copyright Information</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="2"/>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00E21186">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="3" w:name="_Toc376936205"/>
+      <w:r>
+        <w:t>Version history</w:t>
+      </w:r>
+      
+      <w:bookmarkEnd w:id="3"/>
+    </w:p>
+    <w:tbl>
+      <w:tblPr>
+        <w:tblW w:w="0" w:type="auto"/>
+        <w:tblBorders>
+          <w:top w:val="single" w:sz="8" w:space="0" w:color="000000"/>
+          <w:left w:val="single" w:sz="8" w:space="0" w:color="000000"/>
+          <w:bottom w:val="single" w:sz="8" w:space="0" w:color="000000"/>
+          <w:right w:val="single" w:sz="8" w:space="0" w:color="000000"/>
+        </w:tblBorders>
+        <w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/>
+      </w:tblPr>
+      <w:tblGrid>
+        <w:gridCol w:w="2952"/>
+        <w:gridCol w:w="2952"/>
+        <w:gridCol w:w="2952"/>
+      </w:tblGrid>
+      <w:tr w:rsidR="00E21186" w:rsidTr="00E21186">
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="2952" w:type="dxa"/>
+            <w:shd w:val="clear" w:color="auto" w:fill="000000"/>
+          </w:tcPr>
+          <w:p w:rsidR="00E21186" w:rsidRPr="00E21186" w:rsidRDefault="00E21186" w:rsidP="00E21186">
+            <w:pPr>
+              <w:rPr>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+              </w:rPr>
+              <w:t>Time</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="2952" w:type="dxa"/>
+            <w:shd w:val="clear" w:color="auto" w:fill="000000"/>
+          </w:tcPr>
+          <w:p w:rsidR="00E21186" w:rsidRPr="00E21186" w:rsidRDefault="00E21186" w:rsidP="00E21186">
+            <w:pPr>
+              <w:rPr>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+              </w:rPr>
+              <w:t>Author</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="2952" w:type="dxa"/>
+            <w:shd w:val="clear" w:color="auto" w:fill="000000"/>
+          </w:tcPr>
+          <w:p w:rsidR="00E21186" w:rsidRPr="00E21186" w:rsidRDefault="00E21186" w:rsidP="00E21186">
+            <w:pPr>
+              <w:rPr>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+              </w:rPr>
+              <w:t>Changes</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr w:rsidR="00E21186" w:rsidTr="00E21186">
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="2952" w:type="dxa"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:sz="8" w:space="0" w:color="000000"/>
+              <w:left w:val="single" w:sz="8" w:space="0" w:color="000000"/>
+              <w:bottom w:val="single" w:sz="8" w:space="0" w:color="000000"/>
+            </w:tcBorders>
+          </w:tcPr>
+          <w:p w:rsidR="00E21186" w:rsidRPr="00E21186" w:rsidRDefault="00E21186" w:rsidP="00E21186">
+            <w:pPr>
+              <w:rPr>
+                <w:b/>
+                <w:bCs/>
+              </w:rPr>
+            </w:pPr>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="2952" w:type="dxa"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:sz="8" w:space="0" w:color="000000"/>
+              <w:bottom w:val="single" w:sz="8" w:space="0" w:color="000000"/>
+            </w:tcBorders>
+          </w:tcPr>
+          
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:w="2952" w:type="dxa"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:sz="8" w:space="0" w:color="000000"/>
+              <w:bottom w:val="single" w:sz="8" w:space="0" w:color="000000"/>
+              <w:right w:val="single" w:sz="8" w:space="0" w:color="000000"/>
+            </w:tcBorders>
+          </w:tcPr>
+          
+        </w:tc>
+      </w:tr>
+    </w:tbl>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00E21186">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="6" w:name="_Toc376936207"/>
+      <w:r>
+        <w:t>Game Overview</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="6"/>
+    </w:p>
+    
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00E21186">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="7" w:name="_Toc376936208"/>
+      <w:r>
+        <w:lastRenderedPageBreak/>
+        <w:t>Game Concept</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="7"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Shoki is an alien whose spacecraft has crash-landed on Earth. Government human forces are closing in to capture him. The player must survive 10 escalating waves of human soldiers on an 8×8 isometric grid, repair the ship between rounds, and escape home.</w:t></w:r></w:p><w:p><w:r><w:t xml:space="preserve">The game blends the readable telegraph system of Into the Breach with the build-craft progression of a roguelite. Every turn is a small puzzle: where to move, melee or ranged, bait into a trap or avoid it, save HP for later.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00E21186">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="8" w:name="_Toc376936209"/>
+      <w:r>
+        <w:t>Feature Set</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="8"/>
+    </w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Turn-based tactical combat on an isometric 8×8 grid</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Initiative-based turn order (d20 + speed)</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  3 enemy archetypes — Soldier (melee grunt), Sniper (ranged), Heavy (high-HP melee)</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  3 recruitable companions — Drone (glass cannon), Brawler (tank), Trickster (acts twice)</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Enemy telegraph system — every attack and move shown one turn in advance</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Environmental traps that affect both player and enemies</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Permadeath companions + damage-multiplier upgrades stacked across the run</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Procedural room layout regenerated each wave</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00E21186">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="9" w:name="_Toc376936210"/>
+      <w:r>
+        <w:t>Genre</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="9"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Turn-based tactical roguelite.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00E21186">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="10" w:name="_Toc376936211"/>
+      <w:r>
+        <w:t>Target Audience</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="10"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Players who enjoy Into the Breach, Mewgenics, FTL, and Shovel Knight — readable systems, high replayability, short runs (~20 minutes).</w:t></w:r></w:p>
+    <w:p w:rsidR="00E21186" w:rsidRDefault="004423E2" w:rsidP="00E21186">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="11" w:name="_Toc376936212"/>
+      <w:commentRangeStart w:id="12"/>
+      <w:r>
+        <w:t xml:space="preserve">Game Flow </w:t>
+      </w:r>
+      <w:commentRangeEnd w:id="12"/>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+          <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+          <w:b w:val="0"/>
+          <w:bCs w:val="0"/>
+          <w:i w:val="0"/>
+          <w:iCs w:val="0"/>
+        </w:rPr>
+        <w:commentReference w:id="12"/>
+      </w:r>
+      <w:bookmarkEnd w:id="11"/>
+    </w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Micro (one turn): </w:t></w:r><w:r><w:t xml:space="preserve">Move ≤ moveRange tiles → trap check on arrival → optional attack → end turn → enemies execute telegraphed plans.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Macro (one wave): </w:t></w:r><w:r><w:t xml:space="preserve">Survive all enemies → 75% of wave damage heals → +25% melee or ranged upgrade → at waves 3, 6, 9 choose a companion → new room generates.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Meta (one run): </w:t></w:r><w:r><w:t xml:space="preserve">Survive all 10 waves. HP carries across waves; damage multipliers compound; companion roster grows.</w:t></w:r></w:p>
+    <w:p w:rsidR="00E21186" w:rsidRDefault="004423E2" w:rsidP="00035DE9">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="13" w:name="_Toc376936213"/>
+      <w:commentRangeStart w:id="14"/>
+      <w:r>
+        <w:t xml:space="preserve">Look and Feel </w:t>
+      </w:r>
+      <w:commentRangeEnd w:id="14"/>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+          <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+          <w:b w:val="0"/>
+          <w:bCs w:val="0"/>
+          <w:i w:val="0"/>
+          <w:iCs w:val="0"/>
+        </w:rPr>
+        <w:commentReference w:id="14"/>
+      </w:r>
+      <w:bookmarkEnd w:id="13"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">2D pixel art, low-resolution (16-pixel base unit). Inspired by Shovel Knight (palette + chunky pixels), Into the Breach (telegraph clarity), Mewgenics (creature design). Isometric 2:1 diamond projection with tiles that have a 3D-cube appearance.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">LeBlanc fun type — Challenge: </w:t></w:r><w:r><w:t xml:space="preserve">every turn is a readable but non-trivial decision. No hidden information; outcome rests on the player reading the board correctly.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00E21186">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="15" w:name="_Toc376936214"/>
+      <w:r>
+        <w:t>Number of locations</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="15"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">One — a single crash-site room, procedurally regenerated each wave with new void cluster shapes, obstacles, traps, and spawn points.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00E21186">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="16" w:name="_Toc376936215"/>
+      <w:r>
+        <w:t>Number of levels</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="16"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">10 waves. Each wave is a complete combat encounter; the room regenerates between waves.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00E21186">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="17" w:name="_Toc376936216"/>
+      <w:r>
+        <w:t>Number of NPC&#x2019;s</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="17"/>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00E21186">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="18" w:name="_Toc376936217"/>
+      <w:r>
+        <w:t>Number of weapons</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="18"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Two attack modes per character (melee and ranged) toggleable each turn. Damage values are character-specific and modified by per-run +25% upgrades.</w:t></w:r></w:p>
+    
+    
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="19" w:name="_Toc376936218"/>
+      <w:r>
+        <w:t>Gameplay and  Mechanics</w:t>
+      </w:r>
+      
+      
+      <w:bookmarkEnd w:id="19"/>
+      
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="20" w:name="_Toc376936219"/>
+      <w:r>
+        <w:t>Gameplay</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="20"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Each turn the player moves up to moveRange tiles, may trigger a trap on arrival, and chooses one attack (melee adjacent or ranged 2–4 tiles). Enemies acted in initiative order, committing to their telegraphed plans (yellow tile = attack target, grey = move target). The player can outplay the AI by reading the telegraphs and stepping off attack tiles or baiting enemies onto traps.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="21" w:name="_Toc376936220"/>
+      <w:r>
+        <w:t>Game Progression</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="21"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Reused from Gameplay section — the 10-wave structure carries the entire arc, no cutscenes required.</w:t></w:r></w:p><w:p><w:r><w:t xml:space="preserve">Difficulty scales over 10 waves through enemy composition. Soldier counts grow modestly; Sniper introduced at wave 4, Heavy at wave 6. HP carries across waves with a 75% post-wave heal. Damage multipliers from upgrades compound for the full run.</w:t></w:r></w:p><w:tbl><w:tblPr><w:tblW w:w="8100" w:type="dxa"/><w:tblBorders><w:top w:val="single" w:sz="4" w:color="999999"/><w:left w:val="single" w:sz="4" w:color="999999"/><w:bottom w:val="single" w:sz="4" w:color="999999"/><w:right w:val="single" w:sz="4" w:color="999999"/><w:insideH w:val="single" w:sz="4" w:color="CCCCCC"/><w:insideV w:val="single" w:sz="4" w:color="CCCCCC"/></w:tblBorders></w:tblPr><w:tblGrid><w:gridCol w:w="800"/><w:gridCol w:w="1100"/><w:gridCol w:w="1100"/><w:gridCol w:w="1100"/><w:gridCol w:w="4000"/></w:tblGrid><w:tr><w:tc><w:tcPr><w:tcW w:w="800" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Wave</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Soldiers</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Snipers</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Heavies</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4000" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Notes</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">1</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">2</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">0</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">0</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4000" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Onboarding — pure melee rush</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">2</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">2</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">0</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">0</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4000" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Same composition, learning curve</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">3</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">3</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">0</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">0</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4000" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">First Companion pick</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">4</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">2</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">1</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">0</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4000" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Sniper introduced — ranged threat</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">5</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">2</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">1</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">0</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4000" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Practice mixed composition</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">6</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">2</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">1</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">1</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4000" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Heavy introduced + second Companion pick</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">7</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">2</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">2</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">0</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4000" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Double sniper — positioning matters</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">8</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">1</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">2</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">1</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4000" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Hardest single composition</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">9</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">2</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">1</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">1</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4000" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Third Companion pick</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">10</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">2</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">1</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">2</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4000" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Boss-feel finale — two heavies</w:t></w:r></w:p></w:tc></w:tr></w:tbl>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="22" w:name="_Toc376936221"/>
+      <w:r>
+        <w:t>Mission/challenge Structure</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="22"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Each wave is a self-contained combat encounter. Win condition: defeat all enemies on the board. There are no sub-objectives — just survive.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="23" w:name="_Toc376936222"/>
+      <w:r>
+        <w:t>Puzzle Structure</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="23"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Each turn is a micro-puzzle in itself: the telegraph system shows next-turn enemy actions, so the player solves "where can I stand to avoid damage AND get an attack off?" That's the core minute-to-minute puzzle.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="24" w:name="_Toc376936223"/>
+      <w:commentRangeStart w:id="25"/>
+      <w:r>
+        <w:t>Objectives</w:t>
+      </w:r>
+      <w:commentRangeEnd w:id="25"/>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+          <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+          <w:b w:val="0"/>
+          <w:bCs w:val="0"/>
+        </w:rPr>
+        <w:commentReference w:id="25"/>
+      </w:r>
+      <w:bookmarkEnd w:id="24"/>
+      <w:r>
+        <w:t xml:space="preserve"> </w:t>
+      </w:r>
+    </w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Win condition: </w:t></w:r><w:r><w:t xml:space="preserve">Survive all 10 waves.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Lose condition: </w:t></w:r><w:r><w:t xml:space="preserve">Shoki's HP reaches 0 (companion losses do not end the run).</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="26" w:name="_Toc376936224"/>
+      <w:commentRangeStart w:id="27"/>
+      <w:r>
+        <w:t xml:space="preserve">Play Flow </w:t>
+      </w:r>
+      <w:commentRangeEnd w:id="27"/>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+          <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+          <w:b w:val="0"/>
+          <w:bCs w:val="0"/>
+        </w:rPr>
+        <w:commentReference w:id="27"/>
+      </w:r>
+      <w:bookmarkEnd w:id="26"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">MainMenu → Combat (wave 1) → UpgradeScreen → [CompanionScreen at waves 3/6/9] → Combat (wave N+1) → ... → Win or GameOver. Restart returns to MainMenu.</w:t></w:r></w:p>
+    <w:p w:rsidR="00915696" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="28" w:name="_Toc376936225"/>
+      <w:commentRangeStart w:id="29"/>
+      <w:r>
+        <w:t>Mechanics</w:t>
+      </w:r>
+      <w:commentRangeEnd w:id="29"/>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+          <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+          <w:b w:val="0"/>
+          <w:bCs w:val="0"/>
+          <w:i w:val="0"/>
+          <w:iCs w:val="0"/>
+        </w:rPr>
+        <w:commentReference w:id="29"/>
+      </w:r>
+      <w:bookmarkEnd w:id="28"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Every mechanic listed below maps to a class in the codebase (GridManager, TurnManager, CombatSystem, TelegraphSystem, TrapSystem, etc.) — see the Technology section for the system overview.</w:t></w:r></w:p>
+    
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="30" w:name="_Toc376936226"/>
+      <w:commentRangeStart w:id="31"/>
+      <w:r>
+        <w:lastRenderedPageBreak/>
+        <w:t>Physics</w:t>
+      </w:r>
+      <w:commentRangeEnd w:id="31"/>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+          <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+          <w:b w:val="0"/>
+          <w:bCs w:val="0"/>
+        </w:rPr>
+        <w:commentReference w:id="31"/>
+      </w:r>
+      <w:bookmarkEnd w:id="30"/>
+      <w:r>
+        <w:t xml:space="preserve"> </w:t>
+      </w:r>
+    </w:p><w:p><w:r><w:t xml:space="preserve">None — grid-based discrete movement. No simulated physics, no momentum, no continuous collision. Tile occupancy is binary.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="32" w:name="_Toc376936227"/>
+      <w:r>
+        <w:t>Movement</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="32"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Cardinal-only pathfinding via 4-direction BFS. Player moveRange = 2 tiles. Move highlights show only tiles reachable in those steps via the same BFS — so highlights always match what the walker can actually reach. Movement plays as a smooth ~0.16-second tile-to-tile lerp; traps fire on visual arrival.</w:t></w:r></w:p>
+    
+    
+    
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="33" w:name="_Toc376936228"/>
+      <w:r>
+        <w:t>Objects</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="33"/>
+    </w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Spike trap: </w:t></w:r><w:r><w:t xml:space="preserve">10 damage on entry, then consumed (tile reverts to ground).</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Pit trap: </w:t></w:r><w:r><w:t xml:space="preserve">Instant kill (9999 damage); does not consume.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Slow zone: </w:t></w:r><w:r><w:t xml:space="preserve">Applies −1 moveRange for one turn; does not consume.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Obstacles: </w:t></w:r><w:r><w:t xml:space="preserve">Block movement and pathfinding. Do not damage.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Void tiles: </w:t></w:r><w:r><w:t xml:space="preserve">Missing ground (Iteration 4) — block pathfinding and render as nothing. Used to chip corners and drop interior holes.</w:t></w:r></w:p>
+    
+    
+    
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="34" w:name="_Toc376936229"/>
+      <w:r>
+        <w:t>Actions</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="34"/>
+    </w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Melee attack: </w:t></w:r><w:r><w:t xml:space="preserve">Hits all 8 adjacent tiles. Higher damage. Forces close engagement.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Ranged attack: </w:t></w:r><w:r><w:t xml:space="preserve">Single target at Chebyshev distance 2–4. Lower damage. Safer positioning.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Mode toggle (Q): </w:t></w:r><w:r><w:t xml:space="preserve">Switches between melee and ranged. Each mode upgrades independently.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">End turn (Space): </w:t></w:r><w:r><w:t xml:space="preserve">Only available after moving — prevents accidental skipped turns.</w:t></w:r></w:p>
+    
+    
+    
+    
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="35" w:name="_Toc376936230"/>
+      <w:commentRangeStart w:id="36"/>
+      <w:r>
+        <w:t>Combat</w:t>
+      </w:r>
+      <w:commentRangeEnd w:id="36"/>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+          <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+          <w:b w:val="0"/>
+          <w:bCs w:val="0"/>
+        </w:rPr>
+        <w:commentReference w:id="36"/>
+      </w:r>
+      <w:bookmarkEnd w:id="35"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Two interactive elements interact here — see the dedicated section below. Enemy stats:</w:t></w:r></w:p><w:tbl><w:tblPr><w:tblW w:w="9360" w:type="dxa"/><w:tblBorders><w:top w:val="single" w:sz="4" w:color="999999"/><w:left w:val="single" w:sz="4" w:color="999999"/><w:bottom w:val="single" w:sz="4" w:color="999999"/><w:right w:val="single" w:sz="4" w:color="999999"/><w:insideH w:val="single" w:sz="4" w:color="CCCCCC"/><w:insideV w:val="single" w:sz="4" w:color="CCCCCC"/></w:tblBorders></w:tblPr><w:tblGrid><w:gridCol w:w="1500"/><w:gridCol w:w="900"/><w:gridCol w:w="900"/><w:gridCol w:w="1200"/><w:gridCol w:w="1400"/><w:gridCol w:w="3460"/></w:tblGrid><w:tr><w:tc><w:tcPr><w:tcW w:w="1500" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Enemy</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="900" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">HP</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="900" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Speed</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1200" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">MoveRange</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1400" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Damage</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="3460" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Behaviour</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1500" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Soldier</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="900" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">30</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="900" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">1</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1200" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">2</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1400" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">8 melee</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="3460" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Path toward Shoki, attack adjacent</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1500" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Sniper</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="900" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">20</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="900" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">2</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1200" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">2</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1400" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">5 ranged</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="3460" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Keep 2–4 tiles from Shoki</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1500" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Heavy</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="900" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">60</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="900" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">0</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1200" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">1</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1400" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">12 melee</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="3460" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Slow approach, heavy hit</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p><w:r><w:t xml:space="preserve">Companion stats:</w:t></w:r></w:p><w:tbl><w:tblPr><w:tblW w:w="9360" w:type="dxa"/><w:tblBorders><w:top w:val="single" w:sz="4" w:color="999999"/><w:left w:val="single" w:sz="4" w:color="999999"/><w:bottom w:val="single" w:sz="4" w:color="999999"/><w:right w:val="single" w:sz="4" w:color="999999"/><w:insideH w:val="single" w:sz="4" w:color="CCCCCC"/><w:insideV w:val="single" w:sz="4" w:color="CCCCCC"/></w:tblBorders></w:tblPr><w:tblGrid><w:gridCol w:w="1500"/><w:gridCol w:w="900"/><w:gridCol w:w="900"/><w:gridCol w:w="1200"/><w:gridCol w:w="1400"/><w:gridCol w:w="3460"/></w:tblGrid><w:tr><w:tc><w:tcPr><w:tcW w:w="1500" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Companion</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="900" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">HP</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="900" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Speed</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1200" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">MoveRange</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1400" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Damage</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="3460" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Niche</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1500" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Drone</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="900" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">20</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="900" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">5</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1200" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">3</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1400" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">6 ranged</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="3460" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Glass cannon — keeps 2–4 tile range</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1500" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Brawler</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="900" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">40</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="900" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">1</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1200" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">2</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1400" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">12 melee</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="3460" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Tank — soaks hits</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1500" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Trickster</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="900" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">25</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="900" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">6</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1200" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">3</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1400" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">5 ranged</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="3460" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Acts twice per turn</w:t></w:r></w:p></w:tc></w:tr></w:tbl>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="37" w:name="_Toc376936231"/>
+      <w:commentRangeStart w:id="38"/>
+      <w:r>
+        <w:t>Economy</w:t>
+      </w:r>
+      <w:commentRangeEnd w:id="38"/>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+          <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+          <w:b w:val="0"/>
+          <w:bCs w:val="0"/>
+        </w:rPr>
+        <w:commentReference w:id="38"/>
+      </w:r>
+      <w:bookmarkEnd w:id="37"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">No in-game currency. Progression is gated by post-wave upgrade choices (+25% melee OR +25% ranged) and companion recruitment at waves 3, 6, and 9. "Spending" is a one-way choice with no recovery.</w:t></w:r></w:p>
+    
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="39" w:name="_Toc376936232"/>
+      <w:r>
+        <w:lastRenderedPageBreak/>
+        <w:t>Screen Flow</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="39"/>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="40" w:name="_Toc376936233"/>
+      <w:commentRangeStart w:id="41"/>
+      <w:r>
+        <w:t xml:space="preserve">Screen Flow Chart </w:t>
+      </w:r>
+      <w:commentRangeEnd w:id="41"/>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+          <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+          <w:b w:val="0"/>
+          <w:bCs w:val="0"/>
+        </w:rPr>
+        <w:commentReference w:id="41"/>
+      </w:r>
+      <w:bookmarkEnd w:id="40"/>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="42" w:name="_Toc376936234"/>
+      <w:commentRangeStart w:id="43"/>
+      <w:r>
+        <w:t xml:space="preserve">Screen Descriptions </w:t>
+      </w:r>
+      <w:commentRangeEnd w:id="43"/>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+          <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+          <w:b w:val="0"/>
+          <w:bCs w:val="0"/>
+        </w:rPr>
+        <w:commentReference w:id="43"/>
+      </w:r>
+      <w:bookmarkEnd w:id="42"/>
+    </w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Main Menu — single "Start" button; minimal.</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Combat — main gameplay state; HUD overlays board.</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Upgrade Screen — post-wave; +25% melee or +25% ranged choice; shows heal amount.</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Companion Screen — at waves 3/6/9; three-card pick (Drone/Brawler/Trickster).</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Win / GameOver — restart-only end screens.</w:t></w:r></w:p>
+    
+    
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="44" w:name="_Toc376936235"/>
+      <w:commentRangeStart w:id="45"/>
+      <w:r>
+        <w:t xml:space="preserve">Game Options </w:t>
+      </w:r>
+      <w:commentRangeEnd w:id="45"/>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+          <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+          <w:b w:val="0"/>
+          <w:bCs w:val="0"/>
+          <w:i w:val="0"/>
+          <w:iCs w:val="0"/>
+        </w:rPr>
+        <w:commentReference w:id="45"/>
+      </w:r>
+      <w:bookmarkEnd w:id="44"/>
+    </w:p><w:p><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">Out of scope for the Week 6 prototype — </w:t></w:r><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">no settings menu in the prototype; controls are fixed (left click + Q + Space).</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="46" w:name="_Toc376936236"/>
+      <w:r>
+        <w:t>Replaying and Saving</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="46"/>
+      <w:r>
+        <w:t xml:space="preserve"> </w:t>
+      </w:r>
+    </w:p><w:p><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">Out of scope for the Week 6 prototype — </w:t></w:r><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">no save system; runs are session-only. Replayability comes from randomised room layouts, varied enemy compositions, and companion-pick branches.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="47" w:name="_Toc376936237"/>
+      <w:r>
+        <w:t>Cheats and Easter Eggs</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="47"/>
+    </w:p><w:p><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">Out of scope for the Week 6 prototype — </w:t></w:r><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">none planned.</w:t></w:r></w:p>
+    
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="48" w:name="_Toc376936238"/>
+      <w:r>
+        <w:t>Story, Setting and Character</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="48"/>
+      <w:r>
+        <w:t xml:space="preserve">  </w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="49" w:name="_Toc376936239"/>
+      <w:commentRangeStart w:id="50"/>
+      <w:r>
+        <w:t xml:space="preserve">Story and Narrative </w:t>
+      </w:r>
+      <w:commentRangeEnd w:id="50"/>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+          <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+          <w:b w:val="0"/>
+          <w:bCs w:val="0"/>
+          <w:i w:val="0"/>
+          <w:iCs w:val="0"/>
+        </w:rPr>
+        <w:commentReference w:id="50"/>
+      </w:r>
+      <w:bookmarkEnd w:id="49"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Shoki crash-landed on Earth and government forces have surrounded the wreckage. To escape, he must hold his ground across 10 waves while repairing the ship's drive between rounds. Light pulp sci-fi tone; underdog framing — the player is the alien, the antagonists are very-grounded humans.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="51" w:name="_Toc376936240"/>
+      <w:r>
+        <w:t>Back story</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="51"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Shoki is a routine surveyor from a peaceful civilisation. A meteoroid collision forced an emergency landing on Earth — drawing the attention of a government rapid-response unit that has standing orders to capture any non-terrestrial life. The 10 waves represent successive deployments converging on the crash site as Shoki repairs his drive.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="52" w:name="_Toc376936241"/>
+      <w:r>
+        <w:t>Plot Elements</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="52"/>
+    </w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Inciting incident: the crash (begins before play)</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Rising action: waves 1–6 escalate; companions join at 3 and 6</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Climax: wave 9 introduces the third companion pick and the hardest pre-finale composition</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Resolution: wave 10 finale; on win, Shoki escapes; on loss, captured</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="53" w:name="_Toc376936242"/>
+      <w:r>
+        <w:t>Game Progression</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="53"/>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="54" w:name="_Toc376936243"/>
+      <w:r>
+        <w:t>License Considerations</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="54"/>
+    </w:p><w:p><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">Out of scope for the Week 6 prototype — </w:t></w:r><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">student project; no third-party licensed content used. Sprites are original Aseprite work.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="55" w:name="_Toc376936244"/>
+      <w:r>
+        <w:t>Cut Scenes</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="55"/>
+    </w:p><w:p><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">Out of scope for the Week 6 prototype — </w:t></w:r><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">none — the 10-wave countdown carries the entire narrative arc.</w:t></w:r></w:p>
+    
+    
+    
+    
+    
+    
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="56" w:name="_Toc376936245"/>
+      <w:r>
+        <w:lastRenderedPageBreak/>
+        <w:t>Game World</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="56"/>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="57" w:name="_Toc376936246"/>
+      <w:r>
+        <w:t>General look and feel of world</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="57"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Industrial crash-site debris on an open Earth plain. Tile palette uses warm tans (default ground) and cool purples (alternate) for visual rhythm. Traps are framed as crash-site hazards: live wires (spike), debris pits (pit), spilled coolant (slow zone).</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="58" w:name="_Toc376936247"/>
+      <w:r>
+        <w:t>Area #1</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="58"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">The crash site — the only area in the game. An 8×8 isometric room with procedurally varied silhouettes (corner chips, interior holes from Iteration 4) and randomized trap/obstacle placement.</w:t></w:r></w:p>
+    
+    
+    
+    
+    
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="59" w:name="_Toc376936248"/>
+      <w:r>
+        <w:t>Characters</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="59"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Done: shoki.png, drone.png, sniper.png, heavy.png. Planned: soldier.png, brawler.png, trickster.png (current build uses tinted procedural squares as fallbacks).</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00915696">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="60" w:name="_Toc376936249"/>
+      <w:r>
+        <w:t>Character #1</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="60"/>
+    </w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Shoki — the alien protagonist. </w:t></w:r><w:r><w:t xml:space="preserve">HP 100, moveRange 2, melee 15 / ranged 8 base damage. Versatile (melee/ranged toggle), unremarkable mobility. His advantage is the player's ability to read the board — never raw stats.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading4"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Back story</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    
+    
+    
+    
+    
+    
+    <w:p w:rsidR="00C250EA" w:rsidRDefault="00C250EA" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:ind w:left="360"/>
+      </w:pPr>
+    </w:p>
+    
+    
+    
+    
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="66" w:name="_Toc376936254"/>
+      <w:r>
+        <w:t>Objectives</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="66"/>
+    </w:p>
+    
+    
+    
+    
+    
+    
+    <w:p w:rsidR="00005F7E" w:rsidRDefault="00005F7E" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="73" w:name="_Toc376936261"/>
+      <w:r>
+        <w:t>Interface</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="73"/>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="74" w:name="_Toc376936262"/>
+      <w:r>
+        <w:t>Visual System</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="74"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">The board communicates every relevant state without text. The visual gamestate decoder:</w:t></w:r></w:p><w:tbl><w:tblPr><w:tblW w:w="9360" w:type="dxa"/><w:tblBorders><w:top w:val="single" w:sz="4" w:color="999999"/><w:left w:val="single" w:sz="4" w:color="999999"/><w:bottom w:val="single" w:sz="4" w:color="999999"/><w:right w:val="single" w:sz="4" w:color="999999"/><w:insideH w:val="single" w:sz="4" w:color="CCCCCC"/><w:insideV w:val="single" w:sz="4" w:color="CCCCCC"/></w:tblBorders></w:tblPr><w:tblGrid><w:gridCol w:w="2340"/><w:gridCol w:w="7020"/></w:tblGrid><w:tr><w:tc><w:tcPr><w:tcW w:w="2340" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Visual cue</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="7020" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Meaning</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="2340" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Blue diamond on tile top</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="7020" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Valid move target this turn</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="2340" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Orange diamond on tile top</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="7020" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Valid attack target</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="2340" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Yellow pulsing diamond</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="7020" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Enemy will attack this tile next turn</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="2340" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Grey ghost diamond</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="7020" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Enemy will move to this tile next turn</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="2340" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Floating bar (green→red)</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="7020" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">HP fraction of an enemy or companion</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="2340" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Particle burst</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="7020" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Hit landed — yellow = player attacks; red = player takes damage</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="2340" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Missing ground tile</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="7020" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Void — impassable, falls outside the room silhouette</w:t></w:r></w:p></w:tc></w:tr></w:tbl>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="75" w:name="_Toc376936263"/>
+      <w:r>
+        <w:t>HUD - What controls</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="75"/>
+      <w:r>
+        <w:t xml:space="preserve"> </w:t>
+      </w:r>
+    </w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Top-left: Shoki HP bar and numeric value</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Top-right: Wave counter + companion roster (each with HP)</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Bottom-left: Damage multipliers (melee × ranged ×)</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Bottom-right: Current attack mode (Melee/Ranged) with [Q] hint</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Top-center: Controls reminder + telegraph legend</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="76" w:name="_Toc376936264"/>
+      <w:r>
+        <w:t>Menus</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="76"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Minimal — Main Menu (single Start), Upgrade Screen (2 cards), Companion Screen (3 cards), Win/GameOver (restart). All built via OnGUI for prototype speed.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="77" w:name="_Toc376936265"/>
+      <w:r>
+        <w:t>Rendering System</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="77"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Unity Universal Render Pipeline (URP), 2D renderer. Sprites are point-filtered. Sort order is Y-based with explicit ranges: tiles −100..−1, highlights −50, entities 100+.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="78" w:name="_Toc376936266"/>
+      <w:r>
+        <w:t>Camera</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="78"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Single orthographic camera positioned at (0, 4, −10), orthographicSize = 6. Fixed framing of the 8×8 grid; no panning or zoom. Background colour is a deep purple to match the sci-fi tone.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="79" w:name="_Toc376936267"/>
+      <w:r>
+        <w:t>Lighting Models</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="79"/>
+    </w:p><w:p><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">Out of scope for the Week 6 prototype — </w:t></w:r><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">no lighting — sprites use their baked-in colour.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="80" w:name="_Toc376936268"/>
+      <w:commentRangeStart w:id="81"/>
+      <w:r>
+        <w:t xml:space="preserve">Control System </w:t>
+      </w:r>
+      <w:commentRangeEnd w:id="81"/>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+          <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+          <w:b w:val="0"/>
+          <w:bCs w:val="0"/>
+          <w:i w:val="0"/>
+          <w:iCs w:val="0"/>
+        </w:rPr>
+        <w:commentReference w:id="81"/>
+      </w:r>
+      <w:bookmarkEnd w:id="80"/>
+    </w:p><w:tbl><w:tblPr><w:tblW w:w="9360" w:type="dxa"/><w:tblBorders><w:top w:val="single" w:sz="4" w:color="999999"/><w:left w:val="single" w:sz="4" w:color="999999"/><w:bottom w:val="single" w:sz="4" w:color="999999"/><w:right w:val="single" w:sz="4" w:color="999999"/><w:insideH w:val="single" w:sz="4" w:color="CCCCCC"/><w:insideV w:val="single" w:sz="4" w:color="CCCCCC"/></w:tblBorders></w:tblPr><w:tblGrid><w:gridCol w:w="1500"/><w:gridCol w:w="7860"/></w:tblGrid><w:tr><w:tc><w:tcPr><w:tcW w:w="1500" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Input</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="7860" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Action</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1500" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Left click</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="7860" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Move to highlighted tile, then attack on a second click</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1500" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Q</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="7860" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Toggle Melee / Ranged attack mode</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1500" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Space</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="7860" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">End turn (only available after moving)</w:t></w:r></w:p></w:tc></w:tr></w:tbl>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="82" w:name="_Toc376936269"/>
+      <w:r>
+        <w:t>Audio</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="82"/>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="83" w:name="_Toc376936270"/>
+      <w:r>
+        <w:t>Music</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="83"/>
+    </w:p><w:p><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">Out of scope for the Week 6 prototype — </w:t></w:r><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">planned post-prototype.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">Out of scope for the Week 6 prototype — </w:t></w:r><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">audio is out of scope for the Week 6 prototype.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="84" w:name="_Toc376936271"/>
+      <w:r>
+        <w:t>Sound Effects</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="84"/>
+    </w:p><w:p><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">Out of scope for the Week 6 prototype — </w:t></w:r><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">planned post-prototype. Visual juiciness (hit-burst particles, HP bars, telegraph pulses) substitutes for the feedback load.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="85" w:name="_Toc376936272"/>
+      <w:r>
+        <w:lastRenderedPageBreak/>
+        <w:t>Help System</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="85"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">On-screen HUD reminder always shows current controls. The telegraph legend appears top-centre explaining the yellow tile meaning. No tutorial; first wave is the onboarding (2 Soldiers, no traps elsewhere).</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="86" w:name="_Toc376936273"/>
+      <w:r>
+        <w:t>Artificial Intelligence</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="86"/>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="87" w:name="_Toc376936274"/>
+      <w:commentRangeStart w:id="88"/>
+      <w:r>
+        <w:t xml:space="preserve">Opponent AI </w:t>
+      </w:r>
+      <w:commentRangeEnd w:id="88"/>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+          <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+          <w:b w:val="0"/>
+          <w:bCs w:val="0"/>
+          <w:i w:val="0"/>
+          <w:iCs w:val="0"/>
+        </w:rPr>
+        <w:commentReference w:id="88"/>
+      </w:r>
+      <w:bookmarkEnd w:id="87"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">At the start of every round each enemy runs ComputePlan() — pick the nearest player-aligned target, determine move destination, determine attack tile (if in range after the planned move). The plan is rendered as telegraph overlays (yellow for attack target, grey for move target). On the enemy's turn they COMMIT to the telegraphed plan, even if Shoki has moved. This gives the player a fair information advantage they can act on.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="89" w:name="_Toc376936275"/>
+      <w:r>
+        <w:t>Enemy AI – Villains and Monsters</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="89"/>
+    </w:p><w:tbl><w:tblPr><w:tblW w:w="9360" w:type="dxa"/><w:tblBorders><w:top w:val="single" w:sz="4" w:color="999999"/><w:left w:val="single" w:sz="4" w:color="999999"/><w:bottom w:val="single" w:sz="4" w:color="999999"/><w:right w:val="single" w:sz="4" w:color="999999"/><w:insideH w:val="single" w:sz="4" w:color="CCCCCC"/><w:insideV w:val="single" w:sz="4" w:color="CCCCCC"/></w:tblBorders></w:tblPr><w:tblGrid><w:gridCol w:w="1800"/><w:gridCol w:w="7560"/></w:tblGrid><w:tr><w:tc><w:tcPr><w:tcW w:w="1800" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Type</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="7560" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Decision logic</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Soldier</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="7560" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Pathfind toward Shoki via BFS. Plan attack if adjacent after move (Chebyshev ≤ 1).</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Sniper</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="7560" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Maintain Manhattan distance 2–4. Retreat if too close, approach if too far. Plan ranged attack if in range after move.</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Heavy</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="7560" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Same as Soldier but moveRange = 1 — slower threat, harder to dodge once close.</w:t></w:r></w:p></w:tc></w:tr></w:tbl>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="90" w:name="_Toc376936276"/>
+      <w:r>
+        <w:t>Non-combat Characters</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="90"/>
+    </w:p><w:p><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">Out of scope for the Week 6 prototype — </w:t></w:r><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">none — every entity is either Shoki, an enemy, or a companion. All combatants.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="91" w:name="_Toc376936277"/>
+      <w:r>
+        <w:t>Friendly Characters</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="91"/>
+    </w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Drone — pathfind to keep Manhattan distance 2–4 from nearest enemy, ranged attack</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Brawler — pathfind to nearest enemy, melee attack adjacent</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Trickster — executes a Drone-like turn TWICE per round</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="92" w:name="_Toc376936278"/>
+      <w:r>
+        <w:t>Support AI</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="92"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Companion AI runs the same plan/execute pattern as enemies but targets enemies instead of Shoki. Companions are persisted across waves via DontDestroyOnLoad and re-registered on each new room.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="93" w:name="_Toc376936279"/>
+      <w:r>
+        <w:t>Player and Collision Detection</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="93"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Tile-based — no continuous collision. Entity.MoveTo() sets occupancy on arrival and invokes TrapSystem.ResolveTrap. Two entities cannot occupy the same tile; BFS pathfinding respects occupancy.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="94" w:name="_Toc376936280"/>
+      
+      <w:r>
+        <w:t>Pathfinding</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="94"/>
+      
+    </w:p><w:p><w:r><w:t xml:space="preserve">4-direction BFS in GridManager.FindPath. Treats Obstacle and Void tiles as blocked. GridManager.GetReachableTiles uses depth-limited BFS for the player's move-highlight system so the highlights match actual reachability (Iteration 7).</w:t></w:r></w:p>
+    <w:p w:rsidR="0088388F" w:rsidRDefault="0088388F" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00D86EAD">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="95" w:name="_Toc376936281"/>
+      <w:commentRangeStart w:id="96"/>
+      <w:r>
+        <w:t xml:space="preserve">Technology </w:t>
+      </w:r>
+      
+      
+      <w:commentRangeEnd w:id="96"/>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+          <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+          <w:b w:val="0"/>
+          <w:bCs w:val="0"/>
+          <w:kern w:val="0"/>
+        </w:rPr>
+        <w:commentReference w:id="96"/>
+      </w:r>
+      <w:bookmarkEnd w:id="95"/>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="97" w:name="_Toc376936282"/>
+      <w:r>
+        <w:t>Target Hardware</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="97"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Desktop — Linux (primary development target) and Windows. Mouse + keyboard input; no controller support in the prototype.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="98" w:name="_Toc376936283"/>
+      <w:r>
+        <w:t>Development hardware and software</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="98"/>
+    </w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Unity 6 (6000.3.2f1) — IDE and runtime</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  VS Code / Rider — C# editing</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Aseprite — sprite authoring</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Git — version control</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="99" w:name="_Toc376936284"/>
+      <w:r>
+        <w:t>Development procedures and standards</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="99"/>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="100" w:name="_Toc376936285"/>
+      <w:r>
+        <w:t>Game Engine</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="100"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Unity 6 with Universal Render Pipeline (URP) configured for 2D. No third-party engine plugins. Procedural placeholder graphics generate missing sprites at runtime (Aseprite PNGs override them when available).</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="101" w:name="_Toc376936286"/>
+      <w:r>
+        <w:t>Network</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="101"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Single-player only. No networking; no multiplayer planned for the prototype.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="102" w:name="_Toc376936287"/>
+      <w:r>
+        <w:t>Scripting Language</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="102"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">C# only. No visual scripting, no external state machines. Coroutines drive turn execution and animation.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="103" w:name="_Toc376936288"/>
+      
+      <w:r>
+        <w:t>etc.</w:t>
+      </w:r>
+      
+      
+      <w:bookmarkEnd w:id="103"/>
+    </w:p>
+    <w:p w:rsidR="0088388F" w:rsidRDefault="0088388F" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="00A82C12" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="104" w:name="_Toc376936289"/>
+      <w:commentRangeStart w:id="105"/>
+      <w:r>
+        <w:t xml:space="preserve">Game Art </w:t>
+      </w:r>
+      <w:commentRangeEnd w:id="105"/>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="CommentReference"/>
+          <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+          <w:b w:val="0"/>
+          <w:bCs w:val="0"/>
+          <w:kern w:val="0"/>
+        </w:rPr>
+        <w:commentReference w:id="105"/>
+      </w:r>
+      <w:bookmarkEnd w:id="104"/>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="106" w:name="_Toc376936290"/>
+      <w:r>
+        <w:t>Concept Art</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="106"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Concept passes are integrated directly into Aseprite — there is no separate concept-art stage. Sprite iterations live as Aseprite layers/versions on disk.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="107" w:name="_Toc376936291"/>
+      <w:r>
+        <w:t>Style Guides</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="107"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">16-pixel base unit, low palette count, no anti-aliasing, no outlines except for cube tile depth. Iso projection is 2:1 (diamond width:height). Sprite pivots: tiles at (0.5, 0.75) so the diamond top aligns with the grid position; entities at (0.5, 0) so they stand on the tile.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="108" w:name="_Toc376936292"/>
+      <w:r>
+        <w:t>Characters</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="108"/>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="109" w:name="_Toc376936293"/>
+      <w:r>
+        <w:lastRenderedPageBreak/>
+        <w:t>Environments</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="109"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Two tile sprites in rotation: ground.png (tan) and ground_alt.png (purple). RoomGenerator carves void tiles per wave for silhouette variation.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="110" w:name="_Toc376936294"/>
+      <w:r>
+        <w:t>Equipment</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="110"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">None — combat actions are character-intrinsic. No weapon items to pick up.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="111" w:name="_Toc376936295"/>
+      <w:r>
+        <w:t>Cut scenes</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="111"/>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="112" w:name="_Toc376936296"/>
+      <w:r>
+        <w:t>Miscellaneous</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="112"/>
+    </w:p>
+    <w:p w:rsidR="0088388F" w:rsidRDefault="0088388F" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="113" w:name="_Toc376936297"/>
+      <w:r>
+        <w:t>Management</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="113"/>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="114" w:name="_Toc376936298"/>
+      <w:r>
+        <w:t>Detailed Schedule</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="114"/>
+    </w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Weeks 1–2: Concept lock + GDD first draft (Iteration 1: top-down → isometric pivot)</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Week 3: Core systems — grid, turns, BFS pathfinding, traps (Iteration 2: telegraphs + companion design)</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Week 4: Enemy AI, companion AI, combat resolution (Iteration 3: damage rebalance)</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Week 5: Visual juiciness — HP bars, hit particles, smooth walking (Iterations 4–6)</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Week 6: Stability + intermediate playtest + presentation (Iteration 7)</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="115" w:name="_Toc376936299"/>
+      <w:r>
+        <w:t>Budget</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="115"/>
+    </w:p><w:p><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">Out of scope for the Week 6 prototype — </w:t></w:r><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">educational project; no monetary budget. All tools are free or already owned.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="116" w:name="_Toc376936300"/>
+      <w:r>
+        <w:t>Risk Analysis</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="116"/>
+    </w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Scope creep — mitigated by hard 10-wave cap and "out of scope" notes on optional template sections</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Art bottleneck — addressed by procedural fallback sprites so gameplay can be tuned without finished art</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Difficulty tuning — addressed by Iteration 3 damage rebalance and the wave progression curve table</w:t></w:r></w:p><w:p><w:pPr><w:ind w:left="567" w:hanging="283"/></w:pPr><w:r><w:t xml:space="preserve">•  Turn-order desyncs — addressed by Iteration 7 stability fix and code comments to prevent regression</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="117" w:name="_Toc376936301"/>
+      <w:r>
+        <w:t>Localization Plan</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="117"/>
+      <w:r>
+        <w:t xml:space="preserve"> </w:t>
+      </w:r>
+    </w:p><w:p><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">Out of scope for the Week 6 prototype — </w:t></w:r><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">English only.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="118" w:name="_Toc376936302"/>
+      <w:r>
+        <w:t>Test Plan</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="118"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Iterative playtest cycles (see Iteration History below) drive design changes. Each cycle observes specific failure modes (wave 2 deaths, repetitive rooms, unclear highlights, weightless hits, broken turn order) and ships a targeted fix.</w:t></w:r></w:p>
+    <w:p w:rsidR="0088388F" w:rsidRDefault="0088388F" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="119" w:name="_Toc376936303"/>
+      <w:r>
+        <w:t>Appendices</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="119"/>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="120" w:name="_Toc376936304"/>
+      <w:r>
+        <w:t>Asset List</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="120"/>
+    </w:p><w:p><w:r><w:t xml:space="preserve">Master list of all in-game assets, current and planned. Subsection tables below.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="121" w:name="_Toc376936305"/>
+      <w:r>
+        <w:t>Art</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="121"/>
+    </w:p><w:tbl><w:tblPr><w:tblW w:w="9360" w:type="dxa"/><w:tblBorders><w:top w:val="single" w:sz="4" w:color="999999"/><w:left w:val="single" w:sz="4" w:color="999999"/><w:bottom w:val="single" w:sz="4" w:color="999999"/><w:right w:val="single" w:sz="4" w:color="999999"/><w:insideH w:val="single" w:sz="4" w:color="CCCCCC"/><w:insideV w:val="single" w:sz="4" w:color="CCCCCC"/></w:tblBorders></w:tblPr><w:tblGrid><w:gridCol w:w="2800"/><w:gridCol w:w="1800"/><w:gridCol w:w="4760"/></w:tblGrid><w:tr><w:tc><w:tcPr><w:tcW w:w="2800" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Asset</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1800" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Status</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Notes</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="2800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">shoki.png</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Done</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">32×32, bottom-center pivot</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="2800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">drone.png</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Done</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Cyan glass-cannon companion</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="2800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">sniper.png</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Done</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Camo-green enemy</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="2800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">heavy.png</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Done</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Navy steel enemy</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="2800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">soldier.png</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Planned</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Grey gunmetal grunt — procedural fallback in current build</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="2800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">brawler.png</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Planned</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Amber mech-suit companion</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="2800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">trickster.png</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Planned</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Magenta saboteur companion</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="2800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">ground.png</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Done</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Tan isometric cube tile</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="2800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">ground_alt.png</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Done</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Purple variant for visual rhythm</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="2800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">VFX / animations</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="1800" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Planned</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Sprite animations to hook into the WalkToTileSmooth coroutine</w:t></w:r></w:p></w:tc></w:tr></w:tbl>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading4"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Model and Texture List</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading4"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Animation List</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading4"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Effects List</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading4"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Interface Art List </w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading4"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Cut scene List</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="122" w:name="_Toc376936306"/>
+      <w:r>
+        <w:t>Sound</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="122"/>
+    </w:p><w:p><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">Out of scope for the Week 6 prototype — </w:t></w:r><w:r><w:rPr><w:i/></w:rPr><w:t xml:space="preserve">audio is out of scope for the Week 6 prototype.</w:t></w:r></w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading4"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Environmental Sounds</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading4"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Weapon Sounds</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading4"/>
+      </w:pPr>
+      <w:r>
+        <w:lastRenderedPageBreak/>
+        <w:t>Interface Sounds</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:bookmarkStart w:id="123" w:name="_Toc376936307"/>
+      <w:r>
+        <w:t>Music</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="123"/>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading4"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Ambient</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading4"/>
+      </w:pPr>
+      <w:r>
+        <w:t>&#x201C;Action&#x201D;</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading4"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Victory</w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading4"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Defeat</w:t>
+      </w:r>
+    </w:p>
+    
+    <w:p w:rsidR="004423E2" w:rsidRDefault="004423E2" w:rsidP="00C250EA">
+      <w:pPr>
+        <w:pStyle w:val="Heading4"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Actor #1 lines</w:t>
+      </w:r>
+    </w:p>
+    <w:p><w:pPr><w:pStyle w:val="Heading1"/></w:pPr><w:r><w:t xml:space="preserve">Two Interactive Elements</w:t></w:r></w:p><w:p><w:r><w:t xml:space="preserve">The DDG brief requires at least two interactive elements (beyond the player character) that follow the sensory-input → processing → action pattern, and that can interact with each other. Shoki's Adventure meets this with two systems that explicitly form a feedback loop.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Element 1 — Enemy AI. </w:t></w:r><w:r><w:t xml:space="preserve">See: queries TurnManager for player-faction entities; processing: ComputePlan() determines move destination and attack tile; action: commits to telegraphed plan on the enemy's turn.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Element 2 — Environmental Traps. </w:t></w:r><w:r><w:t xml:space="preserve">Collision: Entity.MoveTo invokes TrapSystem.ResolveTrap on arrival; processing: switch on trap type; action: deals damage, applies status, or rewrites tile state.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Interaction: </w:t></w:r><w:r><w:t xml:space="preserve">Enemies COMMIT to telegraphed plans and their pathfinder treats trap tiles as walkable. The player can bait them onto pits — e.g., a Heavy telegraphed to walk south through a Pit will step in and die. This is the system-on-system interaction the rubric asks for.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle w:val="Heading1"/></w:pPr><w:r><w:t xml:space="preserve">Playability, Accessibility &amp; Juiciness</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Playability: </w:t></w:r><w:r><w:t xml:space="preserve">every legal action is visualised before commitment (move + attack highlights); no hidden information (telegraphs + HP bars); minimal controls (click + Q + Space).</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Accessibility: </w:t></w:r><w:r><w:t xml:space="preserve">one-handed input; high-contrast UI; HP encoded with colour AND length so colour-blind players parse correctly; no reflex requirements (turn-based).</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Juiciness: </w:t></w:r><w:r><w:t xml:space="preserve">hit-burst particles on every damage event; floating HP bars that shrink and colour-shift; smooth tile-to-tile walking; pulsing yellow telegraph tiles; post-wave heal feedback.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle w:val="Heading1"/></w:pPr><w:r><w:t xml:space="preserve">Playtest Feedback Log</w:t></w:r></w:p><w:p><w:r><w:t xml:space="preserve">DDG-required documentation of what each playtest cycle observed and what was changed in response.</w:t></w:r></w:p><w:tbl><w:tblPr><w:tblW w:w="9360" w:type="dxa"/><w:tblBorders><w:top w:val="single" w:sz="4" w:color="999999"/><w:left w:val="single" w:sz="4" w:color="999999"/><w:bottom w:val="single" w:sz="4" w:color="999999"/><w:right w:val="single" w:sz="4" w:color="999999"/><w:insideH w:val="single" w:sz="4" w:color="CCCCCC"/><w:insideV w:val="single" w:sz="4" w:color="CCCCCC"/></w:tblBorders></w:tblPr><w:tblGrid><w:gridCol w:w="1100"/><w:gridCol w:w="3500"/><w:gridCol w:w="4760"/></w:tblGrid><w:tr><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Cycle</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="3500" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Observation</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Decision</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Concept review</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="3500" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">30×30 top-down grid was too large to read at a glance.</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">→ Iteration 1: pivot to isometric 8×8, 2-tile cardinal movement.</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Design review</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="3500" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Pokémon-type counters added memorisation tax without making the puzzle harder.</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">→ Iteration 2: drop type counters; add Companion system + telegraphs.</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Playtest 1</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="3500" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">"I died on wave 2 every time." Worst-case round = 63 damage.</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">→ Iteration 3: enemy damage cut ~45%; heal raised 50%→75%.</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Playtest 2</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="3500" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">"All rooms look the same."</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">→ Iteration 4: per-wave Void tile carving.</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Playtest 3</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="3500" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">"I can't tell which tiles are valid attack targets."</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">→ Iteration 5a: top-face-only highlights.</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Playtest 3</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="3500" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">"How much HP does this guy have?"</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">→ Iteration 5b: floating HP bars.</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Playtest 3</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="3500" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">"Hits feel weightless."</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">→ Iteration 5c: hit-burst particles.</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Playtest 4</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="3500" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">"Shoki just teleports."</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">→ Iteration 6: smooth path-walking.</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Stability</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="3500" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">"Clicked a diagonal blue tile, Shoki stopped one short."</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">→ Iteration 7a: BFS-reachable highlights.</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="1100" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Stability</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="3500" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">"Game froze when an enemy walked into a pit."</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4760" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">→ Iteration 7b: UnregisterEntity index fix.</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p><w:pPr><w:pStyle w:val="Heading1"/></w:pPr><w:r><w:t xml:space="preserve">Iteration History</w:t></w:r></w:p><w:p><w:r><w:t xml:space="preserve">Detailed reasoning for each of the seven iterations the prototype has gone through.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Iteration 1 — Top-down 30×30 → Isometric 8×8. </w:t></w:r><w:r><w:t xml:space="preserve">Trigger: concept review. Why: 30×30 was unreadable; 8×8 keeps decisions tight. Required rewriting all spatial systems.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Iteration 2 — Drop type counters; add Companions + Telegraphs. </w:t></w:r><w:r><w:t xml:space="preserve">Trigger: design review. Why: type counters added cognitive load without depth. Companions add permadeath stakes; telegraphs eliminate hidden information.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Iteration 3 — Damage rebalance. </w:t></w:r><w:r><w:t xml:space="preserve">Trigger: playtest 1. Why: wave-6 worst case 63 dmg = lethal in 2 rounds. New numbers cap at 33 dmg/round, recoverable with 75% heal.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Iteration 4 — Void tile carving. </w:t></w:r><w:r><w:t xml:space="preserve">Trigger: playtest 2 (room fatigue). Why: static 8×8 rectangles felt repetitive. Per-wave silhouette variation changes tactical character.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Iteration 5 — Juiciness pass (highlights, HP bars, particles). </w:t></w:r><w:r><w:t xml:space="preserve">Trigger: playtest 3 feedback. Why: directly addresses Playability/Accessibility/Juiciness rubric. Combat reads as combat now.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Iteration 6 — Smooth path-walking. </w:t></w:r><w:r><w:t xml:space="preserve">Trigger: animation prep + trap-timing readability. Why: teleport broke trap timing; smooth walking creates an animation hook.</w:t></w:r></w:p><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Iteration 7 — Stability + reachability fixes. </w:t></w:r><w:r><w:t xml:space="preserve">Trigger: stability playtest. Why: BFS-reachable highlights stopped "corner stop short" bug; UnregisterEntity index fix stopped turn-order desync when an entity died mid-turn.</w:t></w:r></w:p><w:p><w:pPr><w:pStyle w:val="Heading1"/></w:pPr><w:r><w:t xml:space="preserve">Lecture Learnings Coverage</w:t></w:r></w:p><w:p><w:r><w:t xml:space="preserve">DDG requires at least 5 of 9 lecture learnings to be addressed. This GDD covers 8.</w:t></w:r></w:p><w:tbl><w:tblPr><w:tblW w:w="9360" w:type="dxa"/><w:tblBorders><w:top w:val="single" w:sz="4" w:color="999999"/><w:left w:val="single" w:sz="4" w:color="999999"/><w:bottom w:val="single" w:sz="4" w:color="999999"/><w:right w:val="single" w:sz="4" w:color="999999"/><w:insideH w:val="single" w:sz="4" w:color="CCCCCC"/><w:insideV w:val="single" w:sz="4" w:color="CCCCCC"/></w:tblBorders></w:tblPr><w:tblGrid><w:gridCol w:w="4680"/><w:gridCol w:w="4680"/></w:tblGrid><w:tr><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Learning</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="EEEEEE"/></w:tcPr><w:p><w:r><w:rPr><w:b/></w:rPr><w:t xml:space="preserve">Where it lives in this GDD</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Core loop diagram (micro/macro/meta)</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Game Flow section</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Intended fun &amp; engagement</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Look and Feel → LeBlanc fun type</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">GDD (mandatory)</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">This entire document</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Multiple prototype iterations</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Playtest Feedback Log + Iteration History (7 entries)</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Interesting choices &amp; their evolution</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Actions + Iteration 2 (companion system)</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Balancing work</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Iteration 3 + Game Progression wave-curve table</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Randomness &amp; changes</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Game Progression + Area #1</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Narrative aspects</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Story and Narrative + Back story</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Visual gamestate</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Visual System decoder table</w:t></w:r></w:p></w:tc></w:tr><w:tr><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Design patterns</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w="4680" w:type="dxa"/></w:tcPr><w:p><w:r><w:t xml:space="preserve">Singleton, Observer, State machine, Component composition, Coroutines — used throughout the codebase</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:sectPr w:rsidR="004423E2">
+      <w:pgSz w:w="12240" w:h="15840"/>
+      <w:pgMar w:top="1080" w:right="1080" w:bottom="1080" w:left="1080" w:header="540" w:footer="540" w:gutter="0"/>
+      <w:cols w:space="720"/>
+      <w:docGrid w:linePitch="360"/>
+    </w:sectPr>
+  </w:body>
+</w:document>

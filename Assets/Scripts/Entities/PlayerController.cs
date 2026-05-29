@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 public enum AttackMode { Melee, Ranged }
@@ -13,6 +14,7 @@ public class PlayerController : Entity
     private List<Vector2Int> _validMoveTiles   = new();
     private List<Vector2Int> _validAttackTiles = new();
     private bool _waitingForInput = false;
+    private bool _isWalking       = false;   // blocks input while a path-walk is in progress
 
     protected override void Awake()
     {
@@ -38,7 +40,12 @@ public class PlayerController : Entity
 
     void Update()
     {
-        if (!_waitingForInput) return;
+        // Swallow gameplay input while paused — the IMGUI pause menu still receives clicks,
+        // so without this a click on a pause button would also register as a move/attack.
+        if (GameManager.Instance != null && GameManager.Instance.IsPaused) return;
+
+        // Block all input while a walk animation is playing
+        if (!_waitingForInput || _isWalking) return;
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -68,8 +75,7 @@ public class PlayerController : Entity
 
         if (!HasMoved && _validMoveTiles.Contains(gridPos))
         {
-            MoveTo(gridPos);
-            if (IsAlive) ShowAttackOptions(); // Trap may have killed us
+            StartCoroutine(WalkPath(gridPos));   // animated walk, no longer a teleport
             return;
         }
 
@@ -77,16 +83,38 @@ public class PlayerController : Entity
             PerformAttack(gridPos);
     }
 
+    /// <summary>
+    /// Walk the BFS-computed path tile by tile, smoothly lerping between tiles.
+    /// Blocks input via _isWalking until arrival, then opens attack options.
+    /// A trap that kills Shoki mid-path stops the coroutine (Die deactivates the GO).
+    /// </summary>
+    private IEnumerator WalkPath(Vector2Int destination)
+    {
+        _isWalking = true;
+        GridManager.Instance.ClearHighlights();
+        _validMoveTiles.Clear();
+
+        var path = GridManager.Instance.FindPath(GridPos, destination);
+        if (path != null && path.Count > 0)
+        {
+            int steps = Mathf.Min(moveRange, path.Count);
+            for (int i = 0; i < steps; i++)
+            {
+                if (!IsAlive) break;
+                // Host on TurnManager — survives a Pit kill on our last step so this loop unblocks
+                yield return TurnManager.Instance.StartCoroutine(WalkToTileSmooth(path[i], 0.16f));
+            }
+        }
+
+        _isWalking = false;
+        if (IsAlive) ShowAttackOptions();   // Trap on a path tile may have killed us
+    }
+
     private void ShowMoveRange()
     {
-        _validMoveTiles.Clear();
-        for (int dx = -moveRange; dx <= moveRange; dx++)
-        for (int dy = -moveRange; dy <= moveRange; dy++)
-        {
-            if (dx == 0 && dy == 0) continue;
-            var pos = GridPos + new Vector2Int(dx, dy);
-            if (GridManager.Instance.IsWalkable(pos)) _validMoveTiles.Add(pos);
-        }
+        // Use real BFS reachability — not Chebyshev box — so highlighted tiles match
+        // what the walker can actually reach in moveRange cardinal steps.
+        _validMoveTiles = GridManager.Instance.GetReachableTiles(GridPos, moveRange);
         GridManager.Instance.ShowMoveHighlights(_validMoveTiles);
     }
 

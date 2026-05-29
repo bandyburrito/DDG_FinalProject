@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public enum Faction { Player, Enemy }
 
@@ -86,6 +87,14 @@ public abstract class Entity : MonoBehaviour
     {
         if (!IsAlive) return;
         CurrentHP = Mathf.Max(0, CurrentHP - amount);
+
+        // Hit feedback — particle burst. Red for player damage (ouch),
+        // bright yellow for enemy hits (positive "you landed it" feedback).
+        Color burstTint = faction == Faction.Player
+            ? new Color(0.95f, 0.25f, 0.25f, 1f)
+            : new Color(1.00f, 0.92f, 0.30f, 1f);
+        HitBurst.SpawnAt(transform.position + Vector3.up * 0.7f, burstTint, 9);
+
         OnHPChanged?.Invoke(CurrentHP, maxHP);
         if (CurrentHP <= 0) Die();
     }
@@ -106,5 +115,35 @@ public abstract class Entity : MonoBehaviour
 
         var sr = GetComponent<SpriteRenderer>();
         if (sr) sr.sortingOrder = GridManager.Instance.GetSortOrder(pos);
+    }
+
+    /// <summary>
+    /// Smoothly lerp the visual position to the next tile over a short duration, then
+    /// commit the grid state via MoveTo (which updates occupancy, sort order, and fires
+    /// traps on arrival). Facing flips at the start of the walk so the sprite "looks"
+    /// in the direction it's about to head — animation hooks can attach to this method.
+    /// </summary>
+    public IEnumerator WalkToTileSmooth(Vector2Int targetTile, float duration = 0.18f)
+    {
+        Vector3 fromVisual = transform.position;
+        Vector3 toVisual   = GridManager.Instance.GridToWorld(targetTile);
+
+        FaceTarget(targetTile);   // flip sprite at the START so it leads the movement
+
+        float t = 0f;
+        while (t < duration && IsAlive)
+        {
+            t += Time.deltaTime;
+            transform.position = Vector3.Lerp(fromVisual, toVisual, Mathf.Clamp01(t / duration));
+            yield return null;
+        }
+        if (!IsAlive) yield break;
+
+        transform.position = toVisual;
+
+        // Commit grid state — this is when traps fire, occupancy updates, and sort
+        // order is recomputed. Player visually arrives AT the trap tile before the
+        // trap effect fires, which reads correctly to the eye.
+        MoveTo(targetTile);
     }
 }

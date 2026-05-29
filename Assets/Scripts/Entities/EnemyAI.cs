@@ -115,7 +115,11 @@ public class EnemyAI : Entity
 
         yield return new WaitForSeconds(0.2f);
 
-        // Move toward planned destination
+        // Move toward planned destination — smooth lerp per tile for visual continuity.
+        // CRITICAL: route the per-tile walk through TurnManager.StartCoroutine, not our own.
+        // If we walk onto a Pit during this turn, MoveTo() → Die() → SetActive(false) will
+        // STOP any coroutine hosted on our GameObject — including the one ExecuteTurn yields on.
+        // Hosting it on TurnManager keeps it running past our death so ExecuteTurn resumes cleanly.
         if (PlannedMove != GridPos)
         {
             var path = GridManager.Instance.FindPath(GridPos, PlannedMove);
@@ -125,8 +129,7 @@ public class EnemyAI : Entity
                 for (int i = 0; i < steps; i++)
                 {
                     if (!IsAlive) yield break;
-                    MoveTo(path[i]);
-                    yield return new WaitForSeconds(0.1f);
+                    yield return TurnManager.Instance.StartCoroutine(WalkToTileSmooth(path[i], 0.14f));
                 }
             }
         }
@@ -173,11 +176,16 @@ public class EnemyAI : Entity
             .ToList();
         if (adjacents.Count == 0) return GridPos;
 
-        // Approach as far as moveRange allows
-        var path = GridManager.Instance.FindPath(GridPos, adjacents[0]);
-        if (path == null || path.Count == 0) return GridPos;
-        int steps = Mathf.Min(moveRange, path.Count);
-        return path[steps - 1];
+        // Approach as far as moveRange allows. Try each slot in nearest-first order so a
+        // teammate blocking the closest one doesn't freeze us — we route to the next best.
+        foreach (var slot in adjacents)
+        {
+            var path = GridManager.Instance.FindPath(GridPos, slot);
+            if (path == null || path.Count == 0) continue;
+            int steps = Mathf.Min(moveRange, path.Count);
+            return path[steps - 1];
+        }
+        return GridPos;
     }
 
     private Vector2Int GetSniperMoveTarget(Vector2Int targetPos)
