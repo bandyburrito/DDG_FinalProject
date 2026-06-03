@@ -34,11 +34,25 @@ public class AudioManager : MonoBehaviour
     /// <summary>The "amount needed" — the source volume a fade resolves to.</summary>
     private const float TargetVolume = 1f;
 
+    /// <summary>
+    /// The source .wav loops have a dead/quiet tail, so the natural 51s loop feels like
+    /// it stops. Instead of relying on that, we restart the track from the top every
+    /// LoopWindow seconds — only the strong opening section ever plays, no gap.
+    /// </summary>
+    public const float LoopWindow = 10f;
+
     private AudioSource _source;
     private AudioClip _openingClip;
     private AudioClip _roundClip;
     private AudioClip _endClip;
     private AudioClip _currentClip;
+
+    // ── Sound effects (one-shots) ────────────────────────────────────────────
+    private AudioSource _sfx;          // separate source so SFX never disturb the music loop
+    private AudioClip _clickClip;      // any UI / move click
+    private AudioClip _hitClip;        // player takes damage
+    private AudioClip _powerUpClip;    // upgrade chosen
+    private AudioClip _laserClip;      // player ranged attack
 
     // Fade-in state. _fadeT counts up from 0 to FadeDuration after a track change.
     private float _fadeT = FadeDuration;   // start "complete" so nothing fades pre-play
@@ -63,7 +77,29 @@ public class AudioManager : MonoBehaviour
         _source.playOnAwake  = false;
         _source.spatialBlend = 0f;     // 2D — full stereo, no falloff
         _source.volume       = TargetVolume;
+
+        // ── SFX one-shot source + clips ──────────────────────────────────────
+        _clickClip   = Resources.Load<AudioClip>("Audio/click");
+        _hitClip     = Resources.Load<AudioClip>("Audio/hitHurt");
+        _powerUpClip = Resources.Load<AudioClip>("Audio/powerUp");
+        _laserClip   = Resources.Load<AudioClip>("Audio/laserShoot");
+
+        _sfx = gameObject.AddComponent<AudioSource>();
+        _sfx.loop         = false;
+        _sfx.playOnAwake  = false;
+        _sfx.spatialBlend = 0f;
     }
+
+    // ── SFX API (static so any system can fire a one-shot) ────────────────────
+    private void Play(AudioClip clip, float volume)
+    {
+        if (clip != null && _sfx != null) _sfx.PlayOneShot(clip, volume);
+    }
+
+    public static void PlayClick()    => Instance?.Play(Instance._clickClip,   0.55f);
+    public static void PlayHit()      => Instance?.Play(Instance._hitClip,     0.85f);
+    public static void PlayPowerUp()  => Instance?.Play(Instance._powerUpClip, 0.80f);
+    public static void PlayLaser()    => Instance?.Play(Instance._laserClip,   0.70f);
 
     void Update()
     {
@@ -103,6 +139,11 @@ public class AudioManager : MonoBehaviour
             _fadeT += Time.unscaledDeltaTime;
             _source.volume = Mathf.Lerp(0f, TargetVolume, Mathf.Clamp01(_fadeT / FadeDuration));
         }
+
+        // 4) Forced re-loop — restart from the top before the track reaches its dead tail,
+        // so the loop never audibly "stops". The seek keeps the current volume (no re-fade).
+        if (_source.isPlaying && _source.time >= LoopWindow)
+            _source.time = 0f;
     }
 
     private AudioClip ClipForState(GameState s) => s switch

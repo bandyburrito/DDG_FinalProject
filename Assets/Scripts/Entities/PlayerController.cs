@@ -16,6 +16,11 @@ public class PlayerController : Entity
     private bool _waitingForInput = false;
     private bool _isWalking       = false;   // blocks input while a path-walk is in progress
 
+    /// <summary>True while it is the player's turn and input is being accepted (not mid-walk).
+    /// The HUD uses this to show the correct contextual control prompt.</summary>
+    public bool IsAwaitingInput => _waitingForInput && !_isWalking;
+    public bool IsWalking       => _isWalking;
+
     protected override void Awake()
     {
         base.Awake();
@@ -219,6 +224,7 @@ public class PlayerController : Entity
         base.TakeDamage(amount);
         int actualLoss = hpBefore - CurrentHP;
         DamageTakenThisWave += actualLoss;
+        if (actualLoss > 0) AudioManager.PlayHit();   // "ouch" cue when Shoki is hit
     }
 
     protected override void Die()

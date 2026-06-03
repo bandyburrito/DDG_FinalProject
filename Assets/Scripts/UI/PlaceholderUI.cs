@@ -23,6 +23,9 @@ public class PlaceholderUI : MonoBehaviour
     // In-combat HUD styles (JetBrains Mono + palette)
     private GUIStyle _hudLabel;
     private GUIStyle _hudLabelRight;
+    private GUIStyle _hpLabel;
+    private GUIStyle _guidePrimary;
+    private GUIStyle _guideLegend;
 
     // Cached 1×1 solid-colour textures used for backgrounds / button hover fills.
     // Generated once and re-used — much cheaper than calling GUI.DrawTexture with
@@ -48,6 +51,10 @@ public class PlaceholderUI : MonoBehaviour
     {
         var gm = GameManager.Instance;
         var nowState = gm?.State ?? GameState.MainMenu;
+
+        // Global UI click — any left click anywhere (menu buttons, gameplay tiles) gets
+        // the click cue. Action sounds (laser on ranged, power-up on upgrade) layer on top.
+        if (Input.GetMouseButtonDown(0)) AudioManager.PlayClick();
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -121,6 +128,39 @@ public class PlaceholderUI : MonoBehaviour
         _hudLabel.normal.textColor = Palette.Text;
 
         _hudLabelRight = new GUIStyle(_hudLabel) { alignment = TextAnchor.MiddleRight };
+
+        // Bigger, bolder HP readout so players track their health at a glance in a fight.
+        _hpLabel = new GUIStyle(GUI.skin.label)
+        {
+            font      = bold,
+            fontSize  = 20,
+            fontStyle = FontStyle.Bold,
+            alignment = TextAnchor.MiddleLeft
+        };
+        _hpLabel.normal.textColor = Palette.Text;
+
+        // Bottom contextual control-guide — big, rich-text (colour-highlighted keys),
+        // centered. The primary line changes with the player's current phase so they
+        // always see what they can do RIGHT NOW (move, skip-to-attack, attack, end turn).
+        _guidePrimary = new GUIStyle(GUI.skin.label)
+        {
+            font      = bold,
+            fontSize  = 17,
+            alignment = TextAnchor.MiddleCenter,
+            richText  = true,
+            wordWrap  = false
+        };
+        _guidePrimary.normal.textColor = Palette.Text;
+
+        _guideLegend = new GUIStyle(GUI.skin.label)
+        {
+            font      = regular,
+            fontSize  = 13,
+            alignment = TextAnchor.MiddleCenter,
+            richText  = true,
+            wordWrap  = false
+        };
+        _guideLegend.normal.textColor = Palette.TextMute;
 
         // Intro narrative body — bigger, soft-white, top-anchored center, wraps lines.
         _introBodyStyle = new GUIStyle(GUI.skin.label)
@@ -520,16 +560,19 @@ public class PlaceholderUI : MonoBehaviour
         if (player == null) return;
         float sw = Screen.width;
 
-        // HP (top left)
-        GUI.Label(new Rect(10, 10, 200, 22), $"HP: {player.CurrentHP} / {player.maxHP}", _hudLabel);
-        float ratio = (float)player.CurrentHP / player.maxHP;
-        // Track in deep-panel colour; fill shifts Success → AccentYellow → Danger by ratio.
+        // HP (top left) — bigger label + bar so health is easy to read mid-fight.
+        const float HPX = 14f, HPW = 320f, HPH = 26f, HPY = 44f;
+        GUI.Label(new Rect(HPX, 10, 360, 28), $"HP  {player.CurrentHP} / {player.maxHP}", _hpLabel);
+        float ratio = Mathf.Clamp01((float)player.CurrentHP / player.maxHP);
+        // Dark frame, deep-panel track, fill shifts Success → AccentYellow → Danger by ratio.
         GUI.color = Palette.BgDeep;
-        GUI.DrawTexture(new Rect(10, 35, 200, 14), Texture2D.whiteTexture);
+        GUI.DrawTexture(new Rect(HPX - 2, HPY - 2, HPW + 4, HPH + 4), Texture2D.whiteTexture);
+        GUI.color = new Color(0f, 0f, 0f, 0.55f);
+        GUI.DrawTexture(new Rect(HPX, HPY, HPW, HPH), Texture2D.whiteTexture);
         GUI.color = ratio > 0.6f ? Palette.Success
                   : ratio > 0.3f ? Palette.AccentYellow
                                  : Palette.Danger;
-        GUI.DrawTexture(new Rect(11, 36, 198 * ratio, 12), Texture2D.whiteTexture);
+        GUI.DrawTexture(new Rect(HPX, HPY, HPW * ratio, HPH), Texture2D.whiteTexture);
         GUI.color = Color.white;
 
         // Wave (top right)
@@ -550,8 +593,12 @@ public class PlaceholderUI : MonoBehaviour
             }
         }
 
-        // Attack mode (bottom right)
-        string mode = player.currentMode == AttackMode.Melee ? "Melee [Q]" : "Ranged [Q]";
+        // Attack mode (bottom right) — flag the piercing-line evolution once unlocked
+        string mode;
+        if (player.currentMode == AttackMode.Melee)
+            mode = "Melee [Q]";
+        else
+            mode = UpgradeManager.Instance.RangedLineUnlocked ? "Ranged·LINE [Q]" : "Ranged [Q]";
         GUI.Label(new Rect(sw - 210, Screen.height - 40, 200, 22), $"Attack: {mode}", _hudLabelRight);
 
         // Multipliers (bottom left)
@@ -560,20 +607,12 @@ public class PlaceholderUI : MonoBehaviour
         GUI.Label(new Rect(10, Screen.height - 35, 200, 18),
             $"Ranged x{UpgradeManager.Instance.RangedDamageMultiplier:F2}", _hudLabel);
 
-        // Controls reminder — centered at top, muted palette text
-        GUI.contentColor = Palette.TextMute;
-        GUI.Label(new Rect(0, 10, sw, 22),
-            "Click=Move/Attack | Q=Toggle Mode | Space=Skip Phase (move → action)", _centerLabel);
-        GUI.contentColor = Color.white;
-
-        // Telegraph legend — centered at top, accent yellow
-        GUI.contentColor = Palette.AccentYellow;
-        GUI.Label(new Rect(0, 34, sw, 22),
-            "Yellow tile = enemy will attack there", _centerLabel);
-        GUI.contentColor = Color.white;
-
         // Turn-order strip (BG3-style portrait row)
         DrawTurnOrder();
+
+        // Contextual control guide — readable panel at the bottom that tells the player
+        // exactly what they can do in their CURRENT phase.
+        DrawControlsGuide();
     }
 
     /// <summary>
@@ -588,10 +627,12 @@ public class PlaceholderUI : MonoBehaviour
         if (order == null || order.Count == 0) return;
 
         int curIdx = Mathf.Max(0, TurnManager.Instance.CurrentIndex);
-        const float BOX  = 52f;
-        const float GAP  = 6f;
-        const float Y    = 64f;
-        int maxDisplay   = Mathf.Min(8, order.Count - curIdx);
+        const float BOX   = 64f;     // bigger portraits
+        const float GAP   = 10f;
+        const float Y     = 22f;     // moved higher up the screen
+        const float RAISE = 8f;      // current-turn portrait pops up above the rest
+        const float HPH   = 5f;      // mini HP bar height inside each box
+        int maxDisplay    = Mathf.Min(8, order.Count - curIdx);
         if (maxDisplay <= 0) return;
 
         float totalW = maxDisplay * BOX + (maxDisplay - 1) * GAP;
@@ -604,22 +645,32 @@ public class PlaceholderUI : MonoBehaviour
             var e = order[i];
             if (e == null) continue;
 
-            float x = startX + offset * (BOX + GAP);
             bool isCurrent = (offset == 0);
             bool isDead    = !e.IsAlive;
+            float x = startX + offset * (BOX + GAP);
+            float y = isCurrent ? Y - RAISE : Y;   // raise the active unit so it reads first
 
-            // Outer frame — accent yellow for current turn, panel grey for upcoming
-            GUI.color = isCurrent ? Palette.AccentYellow : Palette.BgPanel;
-            GUI.DrawTexture(new Rect(x - 3, Y - 3, BOX + 6, BOX + 6), Texture2D.whiteTexture);
+            // Frame — current turn gets a soft glow + bright accent border; others a panel edge.
+            if (isCurrent)
+            {
+                GUI.color = new Color(Palette.AccentYellow.r, Palette.AccentYellow.g, Palette.AccentYellow.b, 0.30f);
+                GUI.DrawTexture(new Rect(x - 8, y - 8, BOX + 16, BOX + 16), Texture2D.whiteTexture);   // glow
+                GUI.color = Palette.AccentYellow;
+                GUI.DrawTexture(new Rect(x - 4, y - 4, BOX + 8, BOX + 8), Texture2D.whiteTexture);     // frame
+            }
+            else
+            {
+                GUI.color = Palette.BgPanel;
+                GUI.DrawTexture(new Rect(x - 3, y - 3, BOX + 6, BOX + 6), Texture2D.whiteTexture);
+            }
 
-            // Inner fill — tinted by faction: cyan-ish for allies, danger-red for enemies
-            Color fill = e.faction == Faction.Player
-                ? new Color(0.10f, 0.22f, 0.30f, 0.95f)   // cool ally tint
-                : new Color(0.30f, 0.10f, 0.12f, 0.95f);  // hostile tint
-            GUI.color = fill;
-            GUI.DrawTexture(new Rect(x, Y, BOX, BOX), Texture2D.whiteTexture);
+            // Inner fill — faction tint (cool for allies, hostile red for enemies)
+            GUI.color = e.faction == Faction.Player
+                ? new Color(0.10f, 0.22f, 0.30f, 0.97f)
+                : new Color(0.30f, 0.10f, 0.12f, 0.97f);
+            GUI.DrawTexture(new Rect(x, y, BOX, BOX), Texture2D.whiteTexture);
 
-            // Portrait — render the entity's sprite into the box
+            // Portrait — render the entity's sprite (leave room at the bottom for the HP bar)
             var sr = e.GetComponent<SpriteRenderer>();
             if (sr != null && sr.sprite != null && sr.sprite.texture != null)
             {
@@ -627,33 +678,91 @@ public class PlaceholderUI : MonoBehaviour
                 var sprite = sr.sprite;
                 var tex    = sprite.texture;
                 var srect  = sprite.rect;
-                Rect uv = new Rect(
-                    srect.x / tex.width,
-                    srect.y / tex.height,
-                    srect.width  / tex.width,
-                    srect.height / tex.height
-                );
-                const float INSET = 5f;
+                Rect uv = new Rect(srect.x / tex.width, srect.y / tex.height,
+                                   srect.width / tex.width, srect.height / tex.height);
+                const float INSET = 6f;
                 GUI.DrawTextureWithTexCoords(
-                    new Rect(x + INSET, Y + INSET, BOX - INSET * 2, BOX - INSET * 2),
-                    tex, uv);
+                    new Rect(x + INSET, y + INSET, BOX - INSET * 2, BOX - INSET * 2 - HPH - 2), tex, uv);
+            }
+
+            // Mini HP bar along the bottom of each portrait — quick read of who's hurt.
+            if (!isDead && e.maxHP > 0)
+            {
+                float hp = Mathf.Clamp01((float)e.CurrentHP / e.maxHP);
+                float bx = x + 4, bw = BOX - 8, by = y + BOX - HPH - 4;
+                GUI.color = Palette.BgDeep;
+                GUI.DrawTexture(new Rect(bx, by, bw, HPH), Texture2D.whiteTexture);
+                GUI.color = hp > 0.6f ? Palette.Success : hp > 0.3f ? Palette.AccentYellow : Palette.Danger;
+                GUI.DrawTexture(new Rect(bx, by, bw * hp, HPH), Texture2D.whiteTexture);
             }
 
             // Dead overlay
             if (isDead)
             {
                 GUI.color = new Color(0.8f, 0.1f, 0.1f, 0.45f);
-                GUI.DrawTexture(new Rect(x, Y, BOX, BOX), Texture2D.whiteTexture);
+                GUI.DrawTexture(new Rect(x, y, BOX, BOX), Texture2D.whiteTexture);
             }
 
             GUI.color = Color.white;
         }
 
-        // Small label below the strip
+        // Label below the strip
         GUI.contentColor = Palette.TextMute;
-        GUI.Label(new Rect(0, Y + BOX + 4, Screen.width, 16),
+        GUI.Label(new Rect(0, Y + BOX + 6, Screen.width, 16),
             "Turn order →", _centerLabel);
         GUI.contentColor = Color.white;
+    }
+
+    /// <summary>
+    /// Bottom-centre control guide. Shows a big, phase-aware prompt (what you can do
+    /// RIGHT NOW) above a persistent key legend, on a readable panel — so new players
+    /// don't have to decode a thin line of text at the top. Colours via rich-text:
+    /// cyan = move-related, yellow = keys / enemy telegraphs.
+    /// </summary>
+    void DrawControlsGuide()
+    {
+        const string CY = "#40C0E0";   // AccentCyan  — movement
+        const string YL = "#FFD91A";   // AccentYellow — keys & enemy telegraph
+
+        var tm     = TurnManager.Instance;
+        var player = PlayerController.Instance;
+        bool myTurn = tm != null && tm.IsPlayerTurn;
+
+        // ── Pick the contextual prompt ───────────────────────────────────────
+        string prompt;
+        if (!myTurn)
+            prompt = $"Enemy turn — a <color={YL}>yellow tile</color> shows where an enemy will strike next. Step off it!";
+        else if (player != null && player.IsWalking)
+            prompt = "Moving…";
+        else if (player != null && !player.HasMoved)
+            prompt = $"<b>YOUR TURN:</b>  click a <color={CY}>blue tile</color> to <b>MOVE</b>   —   or press <color={YL}>[ SPACE ]</color> to skip to attacking";
+        else if (player != null && !player.HasActed)
+            prompt = $"<b>ATTACK:</b>  click a target   —   <color={YL}>[ Q ]</color> swap melee / ranged   —   <color={YL}>[ SPACE ]</color> end turn";
+        else
+            prompt = "Turn ending…";
+
+        string legend =
+            $"<color={YL}>CLICK</color> move/attack    ·    <color={YL}>[Q]</color> melee↔ranged    ·    <color={YL}>[SPACE]</color> skip phase    ·    <color={YL}>[ESC]</color> pause";
+
+        // ── Panel — sized to fit the WIDEST of the two lines so text never clips ──
+        float sw = Screen.width;
+        float contentW = Mathf.Max(
+            _guidePrimary.CalcSize(new GUIContent(prompt)).x,
+            _guideLegend.CalcSize(new GUIContent(legend)).x);
+        float panelW = Mathf.Clamp(contentW + 56f, 480f, sw - 40f);   // 28px padding each side
+        float panelH = 66f;
+        float px = (sw - panelW) * 0.5f;
+        float py = Screen.height - panelH - 16f;
+
+        GUI.color = new Color(Palette.BgPanel.r, Palette.BgPanel.g, Palette.BgPanel.b, 0.92f);
+        GUI.DrawTexture(new Rect(px, py, panelW, panelH), Texture2D.whiteTexture);
+        GUI.color = myTurn ? Palette.AccentCyan : Palette.AccentYellow;
+        GUI.DrawTexture(new Rect(px, py, panelW, 2), Texture2D.whiteTexture);
+        GUI.color = Color.white;
+
+        // Primary contextual line + persistent legend
+        GUI.Label(new Rect(px, py + 9, panelW, 26), prompt, _guidePrimary);
+        GUI.Label(new Rect(px, py + 40, panelW, 18), legend, _guideLegend);
     }
 
     void DrawUpgradeScreen()
@@ -683,8 +792,14 @@ public class PlaceholderUI : MonoBehaviour
             UpgradeManager.Instance.ApplyUpgrade(UpgradeType.Melee);
         }
 
+        // Ranged button also shows progress toward the piercing-line unlock.
+        int rc        = UpgradeManager.Instance.RangedUpgradeCount;
+        int threshold = UpgradeManager.RANGED_LINE_THRESHOLD;
+        string lineHint = UpgradeManager.Instance.RangedLineUnlocked
+            ? "LINE shot active"
+            : (rc + 1 >= threshold ? "unlocks LINE shot!" : $"LINE shot in {threshold - rc - 1} more");
         if (GUI.Button(new Rect(sw * 0.55f, sh * 0.45f, sw * 0.25f, 90),
-            $"+25% Ranged Damage\nx{ran:F2} -> x{ran + 0.25f:F2}", _panelButtonStyle))
+            $"+25% Ranged Damage\nx{ran:F2} -> x{ran + 0.25f:F2}\n{lineHint}", _panelButtonStyle))
         {
             UpgradeManager.Instance.ApplyUpgrade(UpgradeType.Ranged);
         }
