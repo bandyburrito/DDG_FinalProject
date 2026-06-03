@@ -26,18 +26,37 @@ public class RoomGenerator : MonoBehaviour
         Instance = this;
     }
 
+    [Header("Room Size Variety")]
+    [Range(6, 10)] public int baseSize  = 8;   // smallest room dimension
+    [Range(0, 5)]  public int maxGrowth = 3;   // extra tiles each axis may grow
+
     public void GenerateRoom(int wave)
     {
         Random.InitState(System.DateTime.Now.Millisecond + wave * 1337);
+
+        // ── Vary the room size per wave ──────────────────────────────────────
+        // Base square, then grow each axis 0..maxGrowth INDEPENDENTLY so rooms range
+        // from a tight 8×8 to a sprawling 11×11 with non-square ("weird") footprints —
+        // no longer locked to one fixed size every wave.
+        GridManager.Instance.width  = baseSize + Random.Range(0, maxGrowth + 1);
+        GridManager.Instance.height = baseSize + Random.Range(0, maxGrowth + 1);
+
         GridManager.Instance.InitialiseGrid();
+
+        // Re-frame the camera to fit whatever size we just rolled.
+        GridManager.Instance.FitCamera(Camera.main);
 
         // Carve void tiles BEFORE placing anything else so traps/obstacles can't land in voids
         CarveVoids();
 
-        PlaceRandom(TileType.Obstacle, obstacleCount, border: 1);
-        PlaceRandom(TileType.Spike,    spikeCount,    border: 1);
-        PlaceRandom(TileType.Pit,      pitCount,      border: 1);
-        PlaceRandom(TileType.SlowZone, slowZoneCount, border: 1);
+        // Bigger rooms get proportionally more clutter so the extra space isn't empty.
+        int area      = GridManager.Instance.width * GridManager.Instance.height;
+        int areaBonus = Mathf.Clamp((area - baseSize * baseSize) / 20, 0, 4);
+
+        PlaceRandom(TileType.Obstacle, obstacleCount + areaBonus,     border: 1);
+        PlaceRandom(TileType.Spike,    spikeCount + areaBonus / 2,    border: 1);
+        PlaceRandom(TileType.Pit,      pitCount,                      border: 1);
+        PlaceRandom(TileType.SlowZone, slowZoneCount + areaBonus / 2, border: 1);
 
         BuildSpawnPool(border: 0);
 
@@ -89,12 +108,30 @@ public class RoomGenerator : MonoBehaviour
 
         // ── Interior holes ─────────────────────────────────────────────────────
         // A small number of single-tile voids away from the borders. Player can walk around them.
-        int holes = Random.Range(0, interiorHoleMax + 1);
+        // Scales with room area so bigger maps aren't a flat empty plain.
+        int holes = Random.Range(0, interiorHoleMax + 1 + (w + h) / 8);
         for (int i = 0; i < holes; i++)
         {
             int x = Random.Range(2, w - 2);
             int y = Random.Range(2, h - 2);
             TryCarve(new Vector2Int(x, y));
+        }
+
+        // ── Edge erosion ───────────────────────────────────────────────────────
+        // Bite random single tiles out of the four edges for a jagged, irregular outline
+        // (not just clean corners). More bites on bigger rooms = weirder shapes.
+        int edgeBites = Random.Range(2, 4 + (w + h) / 4);
+        for (int i = 0; i < edgeBites; i++)
+        {
+            // Pick a random point on a random edge.
+            Vector2Int p = Random.Range(0, 4) switch
+            {
+                0 => new Vector2Int(Random.Range(0, w), 0),        // bottom
+                1 => new Vector2Int(Random.Range(0, w), h - 1),    // top
+                2 => new Vector2Int(0, Random.Range(0, h)),        // left
+                _ => new Vector2Int(w - 1, Random.Range(0, h)),    // right
+            };
+            TryCarve(p);
         }
     }
 

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
-public enum GameState { MainMenu, Combat, UpgradeScreen, CompanionScreen, WaveTransition, Win, GameOver }
+public enum GameState { MainMenu, Loading, Intro, Combat, UpgradeScreen, CompanionScreen, WaveTransition, Win, GameOver }
 
 public class GameManager : MonoBehaviour
 {
@@ -103,6 +103,26 @@ public class GameManager : MonoBehaviour
         CurrentWave = 0;
         UpgradeManager.Instance.Reset();
         ActiveCompanions.Clear();
+
+        // Brief Loading screen → Intro → Wave 1. The loading state gives the menu
+        // music a beat to land and prevents the jarring "click → wall of text".
+        StartCoroutine(LoadingThenIntro());
+    }
+
+    private System.Collections.IEnumerator LoadingThenIntro()
+    {
+        State = GameState.Loading;
+        // ~1.4s feels like an intentional transition without dragging.
+        yield return new WaitForSecondsRealtime(1.4f);
+        State = GameState.Intro;
+        IntroSequence.Instance?.Begin();
+    }
+
+    /// <summary>Called by IntroSequence once the typewriter narrative is done
+    /// (or skipped via Esc). Loads wave 1 and hands off to combat.</summary>
+    public void FinishIntro()
+    {
+        if (State != GameState.Intro) return;
         LoadNextWave();
     }
 

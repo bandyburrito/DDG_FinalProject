@@ -27,7 +27,11 @@ public class PlayerController : Entity
         speed         = 3;
         moveRange     = 2;   // 2-tile movement on 8x8 grid
         meleeDamage   = 15;
-        rangedDamage  = 8;
+        // Bumped 8 → 12 (Iteration: ranged rebalance). Melee's 8-tile sweep dramatically
+        // out-scales single-target ranged once UpgradeManager multipliers kick in; a higher
+        // base damage plus the cross-splash in CombatSystem keeps ranged competitive without
+        // letting it dominate the close-range game.
+        rangedDamage  = 12;
         rangedRangeMin = 2;
         rangedRangeMax = 4;
         CurrentHP     = maxHP;
@@ -53,8 +57,26 @@ public class PlayerController : Entity
             RefreshHighlights();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && HasMoved)
-            EndTurn();
+        // Space now resolves the CURRENT phase rather than only ending the turn:
+        //   1st press  → skip the movement phase, jump straight to attack options
+        //   2nd press  → skip the action phase, end the turn
+        // Two clean presses = "skip my turn entirely." Clicking a tile still performs
+        // the action normally — Space is just the explicit out so players aren't
+        // forced into a move or an attack they don't want to make.
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (!HasMoved)
+            {
+                HasMoved = true;
+                _validMoveTiles.Clear();
+                ShowAttackOptions();
+            }
+            else if (!HasActed)
+            {
+                EndTurn();
+            }
+            return;
+        }
 
         if (Input.GetMouseButtonDown(0))
             HandleLeftClick();

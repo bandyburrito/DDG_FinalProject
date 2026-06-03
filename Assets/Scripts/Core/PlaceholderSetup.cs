@@ -32,6 +32,8 @@ public class PlaceholderSetup : MonoBehaviour
         mgr.AddComponent<EnemySpawner>();
         mgr.AddComponent<UpgradeManager>();
         mgr.AddComponent<UIManager>();
+        mgr.AddComponent<AudioManager>();   // background-loop music tied to GameState
+        mgr.AddComponent<IntroSequence>();  // Undertale-style typewriter narrative
 
         // Grid — load tiles from Resources/Tiles/ if present, fallback to procedural diamonds
         var gridGO = new GameObject("_Grid");
@@ -76,7 +78,7 @@ public class PlaceholderSetup : MonoBehaviour
         // Centre of isometric 8x8 grid is roughly at (0, 8*tileHeight) — calculated dynamically below
         cam.transform.position = new Vector3(0f, 4f, -10f);
         cam.orthographicSize = 6f;
-        cam.backgroundColor = new Color(0.13f, 0.07f, 0.20f); // dark purple
+        cam.backgroundColor = Palette.BgMain;   // shared base across menu/loading/intro/gameplay
     }
 
     IEnumerator Start()
@@ -226,7 +228,7 @@ public class PlaceholderSetup : MonoBehaviour
         }
         var ai = go.AddComponent<CompanionAI>();
         ai.companionType = type;
-        go.AddComponent<HpBar>();   // companions get the same floating HP bar
+        go.AddComponent<HpBar>();        // companions get the same floating HP bar
         go.SetActive(false);
         return go;
     }

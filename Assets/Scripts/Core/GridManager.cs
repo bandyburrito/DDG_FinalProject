@@ -55,10 +55,18 @@ public class GridManager : MonoBehaviour
 
     public void InitialiseGrid()
     {
+        // Tear down the PREVIOUS grid using ITS OWN dimensions — not the new width/height.
+        // The room size can change between waves; indexing the old array with the new
+        // (possibly larger) bounds would throw IndexOutOfRangeException and abort the
+        // whole room build (the "map failed to spawn on round 2" bug).
         if (_tileObjects != null)
-            for (int x = 0; x < width; x++)
-                for (int y = 0; y < height; y++)
+        {
+            int oldW = _tileObjects.GetLength(0);
+            int oldH = _tileObjects.GetLength(1);
+            for (int x = 0; x < oldW; x++)
+                for (int y = 0; y < oldH; y++)
                     if (_tileObjects[x, y]) Destroy(_tileObjects[x, y]);
+        }
 
         _grid        = new TileData[width, height];
         _tileObjects = new GameObject[width, height];
@@ -124,6 +132,36 @@ public class GridManager : MonoBehaviour
 
     /// <summary>Entity sort order — above tiles and highlights, with Y-based depth.</summary>
     public int GetSortOrder(Vector2Int pos) => 100 + (height - pos.y) * 10;
+
+    /// <summary>
+    /// Re-frame an orthographic camera so the WHOLE current grid is visible, centred,
+    /// with margin for entity/cube sprite overhang. Called after each wave's grid is
+    /// (re)built so variable room sizes always fit on screen.
+    ///
+    /// Iso world bounds for a width×height grid (GridToWorld with the current tile sizes):
+    ///   x ∈ [-(height-1)·tileWidth , (width-1)·tileWidth]
+    ///   y ∈ [0 , (width-1 + height-1)·tileHeight]
+    /// </summary>
+    public void FitCamera(Camera cam, float marginX = 3.0f, float marginY = 2.5f)
+    {
+        if (cam == null || !cam.orthographic) return;
+
+        float minX = -(height - 1) * tileWidth;
+        float maxX =  (width  - 1) * tileWidth;
+        float minY = 0f;
+        float maxY = (width - 1 + height - 1) * tileHeight;
+
+        float centerX = (minX + maxX) * 0.5f;
+        float centerY = (minY + maxY) * 0.5f;
+
+        float halfW = (maxX - minX) * 0.5f + marginX;
+        float halfH = (maxY - minY) * 0.5f + marginY;
+
+        float aspect = cam.aspect > 0.01f ? cam.aspect : 16f / 9f;
+        // orthographicSize is HALF the vertical view height; width is size·aspect.
+        cam.orthographicSize    = Mathf.Max(halfH, halfW / aspect);
+        cam.transform.position  = new Vector3(centerX, centerY, cam.transform.position.z);
+    }
 
     // ── Accessors ─────────────────────────────────────────────────────────────
 
