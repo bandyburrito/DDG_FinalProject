@@ -43,7 +43,7 @@ public abstract class Entity : MonoBehaviour
         GridManager.Instance.ClearOccupant(GridPos);
         GridPos = newPos;
         GridManager.Instance.SetOccupant(newPos, this);
-        transform.position = GridManager.Instance.GridToWorld(newPos);
+        transform.position = GridManager.Instance.GridToWorldEntity(newPos);
 
         var sr = GetComponent<SpriteRenderer>();
         if (sr) sr.sortingOrder = GridManager.Instance.GetSortOrder(newPos);
@@ -111,7 +111,7 @@ public abstract class Entity : MonoBehaviour
     {
         GridPos = pos;
         GridManager.Instance.SetOccupant(pos, this);
-        transform.position = GridManager.Instance.GridToWorld(pos);
+        transform.position = GridManager.Instance.GridToWorldEntity(pos);
 
         var sr = GetComponent<SpriteRenderer>();
         if (sr) sr.sortingOrder = GridManager.Instance.GetSortOrder(pos);
@@ -126,7 +126,7 @@ public abstract class Entity : MonoBehaviour
     public IEnumerator WalkToTileSmooth(Vector2Int targetTile, float duration = 0.18f)
     {
         Vector3 fromVisual = transform.position;
-        Vector3 toVisual   = GridManager.Instance.GridToWorld(targetTile);
+        Vector3 toVisual   = GridManager.Instance.GridToWorldEntity(targetTile);
 
         FaceTarget(targetTile);   // flip sprite at the START so it leads the movement
 

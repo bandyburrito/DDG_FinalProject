@@ -136,6 +136,24 @@ public class GridManager : MonoBehaviour
         return new Vector3(x, y, 0f);
     }
 
+    /// <summary>
+    /// Tiles are drawn so the cube's TOP FACE sits in the upper portion of the sprite,
+    /// while entities pivot at their feet (sprite y = 0). Placing an entity at the raw
+    /// tile coord puts its feet at the tile's *centre*, which reads as "sunk into the
+    /// cube" rather than "standing on top". This lifts the entity so its feet visually
+    /// land on the front edge of the diamond top face — the iso "ground" of that tile.
+    /// </summary>
+    public const float EntityYOffset = 0.42f;
+
+    public Vector3 GridToWorldEntity(Vector2Int pos)
+        => GridToWorld(pos) + Vector3.up * EntityYOffset;
+
+    /// <summary>Small lift for the move/attack highlight overlays so they sit centred on
+    /// the new tile art's top face (which is in the upper-middle of the canvas, not the
+    /// exact pivot centre). Without this the highlight slid below the front edge of the
+    /// diamond and looked like it was floating under the tile.</summary>
+    public const float HighlightYOffset = 0.10f;
+
     public Vector2Int WorldToGrid(Vector3 world)
     {
         // Inverse of GridToWorld
@@ -233,7 +251,12 @@ public class GridManager : MonoBehaviour
     private GameObject SpawnHighlight(GameObject prefab, Vector2Int tile)
     {
         if (prefab == null) return null;
-        var go = Instantiate(prefab, GridToWorld(tile) + Vector3.back * 0.05f, Quaternion.identity);
+        // Lift the highlight by HighlightYOffset so the procedural diamond sprite sits
+        // on the new tile art's top face. Without it, the highlight rendered at the tile
+        // sprite's pivot centre, which landed BELOW the front edge of the diamond — the
+        // "goofy" floating highlight under the cube the user reported.
+        var spawnPos = GridToWorld(tile) + Vector3.up * HighlightYOffset + Vector3.back * 0.05f;
+        var go = Instantiate(prefab, spawnPos, Quaternion.identity);
         go.SetActive(true);
         var sr = go.GetComponent<SpriteRenderer>();
         if (sr) sr.sortingOrder = -50;  // Above tiles (-92..-99), below entities (110+)

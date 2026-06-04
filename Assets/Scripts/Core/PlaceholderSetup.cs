@@ -53,8 +53,9 @@ public class PlaceholderSetup : MonoBehaviour
             SpriteLoader.LoadTile("ground"),
             SpriteLoader.LoadTile("slow"),     // the textured floor we just renamed
         };
-        grid.moveHighlightPrefab   = MakeOverlayPrefab("MoveHL",   "ground", new Color(0.2f, 0.6f, 1f, 0.55f));
-        grid.attackHighlightPrefab = MakeOverlayPrefab("AtkHL",    "ground", new Color(1f, 0.4f, 0.0f, 0.7f));  // bright orange — won't blend into red enemies
+        // Darker, lower-alpha highlights so they tint the tile without breaking contrast.
+        grid.moveHighlightPrefab   = MakeOverlayPrefab("MoveHL",   "ground", new Color(0.12f, 0.35f, 0.55f, 0.40f));
+        grid.attackHighlightPrefab = MakeOverlayPrefab("AtkHL",    "ground", new Color(0.55f, 0.18f, 0.08f, 0.45f));
         grid.telegraphAttackPrefab = MakeOverlayPrefab("TelAtk",   "ground", new Color(1f, 0.85f, 0.1f, 0.6f));
         grid.telegraphMovePrefab   = MakeOverlayPrefab("TelMove",  "ground", new Color(0.8f, 0.8f, 0.8f, 0.25f));
 
@@ -88,7 +89,11 @@ public class PlaceholderSetup : MonoBehaviour
         // Centre of isometric 8x8 grid is roughly at (0, 8*tileHeight) — calculated dynamically below
         cam.transform.position = new Vector3(0f, 4f, -10f);
         cam.orthographicSize = 6f;
-        cam.backgroundColor = Palette.BgMain;   // shared base across menu/loading/intro/gameplay
+        // Dark navy fallback from the image's top corners — only visible if the bg
+        // image doesn't load or during the first frame before BackgroundQuad sizes itself.
+        cam.backgroundColor = new Color(0.12f, 0.10f, 0.20f);
+        // Full-viewport background image rendered behind everything via a SpriteRenderer.
+        cam.gameObject.AddComponent<BackgroundQuad>();
     }
 
     IEnumerator Start()
@@ -229,6 +234,8 @@ public class PlaceholderSetup : MonoBehaviour
         {
             sr.sprite = loaded;
             sr.color = Color.white;
+            // Slightly smaller than Shoki so allies don't visually dominate the board.
+            go.transform.localScale = new Vector3(0.85f, 0.85f, 1f);
         }
         else
         {

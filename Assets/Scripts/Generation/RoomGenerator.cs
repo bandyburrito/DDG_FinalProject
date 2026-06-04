@@ -175,41 +175,28 @@ public class RoomGenerator : MonoBehaviour
         // can reach each other. Without this, you can get trapped behind a void wall.
         var mainArea = ComputeLargestConnectedComponent();
 
-        // All edge tiles
-        var edges = new List<Vector2Int>();
+        // Spawn candidate set. The OLD generator picked only from the 4 outer rows/cols,
+        // which made every wave feel like "guys lined up on opposite walls". Now we sample
+        // BOTH the perimeter and the interior — perimeter gets 2× weight so most enemies
+        // still arrive from the edges, but some land deeper in the room for non-linear
+        // setups (cover behind obstacles, ambush positions, etc.).
+        var candidates = new List<Vector2Int>();
         for (int x = border; x < w - border; x++)
+        for (int y = border; y < h - border; y++)
         {
-            edges.Add(new Vector2Int(x, border));
-            edges.Add(new Vector2Int(x, h - 1 - border));
-        }
-        for (int y = border + 1; y < h - 1 - border; y++)
-        {
-            edges.Add(new Vector2Int(border, y));
-            edges.Add(new Vector2Int(w - 1 - border, y));
-        }
-
-        edges.RemoveAll(p =>
-        {
+            var p = new Vector2Int(x, y);
             var tile = GridManager.Instance.GetTile(p);
-            // Reject any tile that's not Empty, not in the main playable area, or that
-            // has no walkable cardinal neighbour (an entity spawned there couldn't move
-            // on turn 1 — the "trapped at spawn" symptom).
-            if (tile == null || tile.type != TileType.Empty) return true;
-            if (!mainArea.Contains(p)) return true;
-            return !HasWalkableNeighbour(p);
-        });
+            if (tile == null || tile.type != TileType.Empty) continue;
+            if (!mainArea.Contains(p)) continue;
+            if (!HasWalkableNeighbour(p)) continue;     // guarantees turn-1 movement
 
-        // If the edges came up empty (extremely irregular room shape), fall back to ANY
-        // tile in the main area with a walkable neighbour — better than no spawns at all.
-        if (edges.Count == 0)
-        {
-            foreach (var p in mainArea)
-            {
-                var tile = GridManager.Instance.GetTile(p);
-                if (tile != null && tile.type == TileType.Empty && HasWalkableNeighbour(p))
-                    edges.Add(p);
-            }
+            bool onPerimeter = (x == border || x == w - 1 - border
+                             || y == border || y == h - 1 - border);
+            candidates.Add(p);
+            if (onPerimeter) candidates.Add(p);          // 2× weight on edges
         }
+
+        var edges = candidates;   // keep the name "edges" so downstream loops are unchanged
 
         // Shuffle
         for (int i = edges.Count - 1; i > 0; i--)

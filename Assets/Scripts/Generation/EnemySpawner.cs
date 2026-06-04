@@ -31,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
         };
         if (prefab == null) { Debug.LogWarning($"No prefab for {type}"); return null; }
 
-        var go = Instantiate(prefab, GridManager.Instance.GridToWorld(gridPos), Quaternion.identity);
+        var go = Instantiate(prefab, GridManager.Instance.GridToWorldEntity(gridPos), Quaternion.identity);
         go.SetActive(true);
         go.name = $"Enemy_{type}_{gridPos.x}_{gridPos.y}";
 
@@ -52,7 +52,7 @@ public class EnemySpawner : MonoBehaviour
         };
         if (prefab == null) { Debug.LogWarning($"No prefab for companion {type}"); return null; }
 
-        var go = Instantiate(prefab, GridManager.Instance.GridToWorld(gridPos), Quaternion.identity);
+        var go = Instantiate(prefab, GridManager.Instance.GridToWorldEntity(gridPos), Quaternion.identity);
         go.SetActive(true);
         go.name = $"Companion_{type}";
 
