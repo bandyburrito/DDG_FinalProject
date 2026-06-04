@@ -34,6 +34,10 @@ public class GridManager : MonoBehaviour
 
     [Header("Tile Prefabs")]
     public GameObject groundTilePrefab;
+    /// <summary>Sprites the floor can render with. Each Empty tile picks one at random
+    /// when it spawns, so the ground reads as varied instead of a single repeated texture.
+    /// Populated by PlaceholderSetup at boot; if empty, the prefab's own sprite is used.</summary>
+    public Sprite[] groundSpriteVariants;
     public GameObject obstacleTilePrefab;
     public GameObject spikeTrapPrefab;
     public GameObject pitTrapPrefab;
@@ -109,6 +113,16 @@ public class GridManager : MonoBehaviour
         // Ground tiles always rendered behind highlights and entities
         var sr = go.GetComponent<SpriteRenderer>();
         if (sr) sr.sortingOrder = -100 + (height - pos.y);
+
+        // Per-tile sprite variation for ground — randomly swap to one of the variant
+        // sprites so the floor doesn't read as one uniform repeated texture.
+        if (sr != null && type == TileType.Empty
+            && groundSpriteVariants != null && groundSpriteVariants.Length > 0)
+        {
+            var v = groundSpriteVariants[Random.Range(0, groundSpriteVariants.Length)];
+            if (v != null) sr.sprite = v;
+        }
+
         _tileObjects[pos.x, pos.y] = go;
     }
 
@@ -174,6 +188,20 @@ public class GridManager : MonoBehaviour
     public bool IsWalkable(Vector2Int pos) =>
         IsInBounds(pos) && _grid[pos.x, pos.y].IsWalkable;
 
+    /// <summary>
+    /// The single source of truth for "what blocks pathing" — used by BOTH
+    /// GetReachableTiles (the player's move-range highlights) and FindPath (the
+    /// click-to-walk pathfinder). Traps (Spike, Pit, SlowZone) are deliberately
+    /// NOT blocked — the player must be able to step onto them so the trap
+    /// system can fire (death by pit, slow effect, etc.). Only solid Obstacle
+    /// tiles and missing-ground Void tiles block movement.
+    ///
+    /// AI movement uses TileData.IsWalkable instead, which DOES block pits so
+    /// enemies don't suicide-walk into them.
+    /// </summary>
+    private static bool BlocksPath(TileData tile) =>
+        tile == null || tile.type == TileType.Obstacle || tile.type == TileType.Void;
+
     public void SetOccupant(Vector2Int pos, Entity e)
     { if (IsInBounds(pos)) _grid[pos.x, pos.y].occupant = e; }
 
@@ -238,7 +266,7 @@ public class GridManager : MonoBehaviour
             {
                 if (visited.ContainsKey(nb)) continue;
                 var tile = GetTile(nb);
-                if (tile == null || tile.type == TileType.Obstacle || tile.type == TileType.Void) continue;
+                if (BlocksPath(tile)) continue;                // obstacles + voids only — traps remain walkable
                 // Never route through OR land on a tile another character occupies.
                 // (Previously the goal was exempted via `nb != goal`, which let two entities
                 // plan onto the same tile and end up stacked — telegraphs are computed at
@@ -311,8 +339,7 @@ public class GridManager : MonoBehaviour
             {
                 if (depth.ContainsKey(nb)) continue;
                 var tile = GetTile(nb);
-                if (tile == null) continue;
-                if (tile.type == TileType.Obstacle || tile.type == TileType.Void) continue;
+                if (BlocksPath(tile)) continue;                // obstacles + voids only — traps remain walkable
                 if (!ignoreOccupants && tile.occupant != null) continue;
 
                 depth[nb] = d + 1;

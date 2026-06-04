@@ -19,6 +19,7 @@ public class PlaceholderUI : MonoBehaviour
     private GUIStyle _menuSubtitleHeading;
     private GUIStyle _settingsLabel;
     private GUIStyle _settingsValueRight;
+    private GUIStyle _companionCardText;
 
     // In-combat HUD styles (JetBrains Mono + palette)
     private GUIStyle _hudLabel;
@@ -36,6 +37,12 @@ public class PlaceholderUI : MonoBehaviour
 
     // Shoki portrait for the main-menu hero image. Loaded lazily on first paint.
     private Texture2D _shokiPortrait;
+
+    // Companion portraits — shown on the companion-pick cards so players see the art
+    // they're choosing rather than picking from text alone. Loaded lazily.
+    private Texture2D _portraitDrone;
+    private Texture2D _portraitBrawler;
+    private Texture2D _portraitTrickster;
 
     private bool _stylesInit = false;
 
@@ -288,6 +295,17 @@ public class PlaceholderUI : MonoBehaviour
             alignment = TextAnchor.MiddleRight
         };
         _settingsValueRight.normal.textColor = Palette.TextMute;
+
+        // Companion-card text — under the portrait, centred, wraps automatically.
+        _companionCardText = new GUIStyle(GUI.skin.label)
+        {
+            font      = regular,
+            fontSize  = 14,
+            alignment = TextAnchor.UpperCenter,
+            wordWrap  = true,
+            richText  = false
+        };
+        _companionCardText.normal.textColor = Palette.Text;
     }
 
     private static Texture2D MakeSolidTex(Color c)
@@ -307,6 +325,41 @@ public class PlaceholderUI : MonoBehaviour
             if (sprite != null) _shokiPortrait = sprite.texture;
         }
         return _shokiPortrait;
+    }
+
+    /// <summary>Lazily load each companion's portrait texture from Resources/Entities.</summary>
+    private Texture2D GetCompanionPortrait(CompanionType type)
+    {
+        Texture2D cached = type switch
+        {
+            CompanionType.Drone     => _portraitDrone,
+            CompanionType.Brawler   => _portraitBrawler,
+            CompanionType.Trickster => _portraitTrickster,
+            _                       => null,
+        };
+        if (cached != null) return cached;
+
+        string resource = type switch
+        {
+            CompanionType.Drone     => "drone",
+            CompanionType.Brawler   => "brawler",
+            CompanionType.Trickster => "trickster",
+            _                       => null,
+        };
+        if (resource == null) return null;
+
+        var sprite = SpriteLoader.LoadEntity(resource);
+        if (sprite == null) return null;
+        var tex = sprite.texture;
+        tex.filterMode = FilterMode.Point;   // crisp pixel-art upscale, no blur
+
+        switch (type)
+        {
+            case CompanionType.Drone:     _portraitDrone     = tex; break;
+            case CompanionType.Brawler:   _portraitBrawler   = tex; break;
+            case CompanionType.Trickster: _portraitTrickster = tex; break;
+        }
+        return tex;
     }
 
     void OnGUI()
@@ -823,26 +876,56 @@ public class PlaceholderUI : MonoBehaviour
         GUI.Label(new Rect(0, sh * 0.15f, sw, 50), "Choose a Companion", _titleStyle);
 
         float cardW = sw * 0.22f;
-        float cardH = sh * 0.35f;
-        float y = sh * 0.4f;
+        float cardH = sh * 0.38f;          // a touch taller so the portrait has room
+        float y = sh * 0.38f;
 
-        if (Btn(new Rect(sw * 0.08f, y, cardW, cardH),
-            "DRONE\n\nHP 20  Speed +2\nRanged 2-4 tiles\nDamage 6\n\nGlass cannon", _panelButtonStyle))
+        DrawCompanionCard(sw * 0.08f, y, cardW, cardH, CompanionType.Drone,
+            "DRONE\nHP 20  Speed +2\nRanged 2-4 tiles\nDamage 6\nGlass cannon");
+        DrawCompanionCard(sw * 0.39f, y, cardW, cardH, CompanionType.Brawler,
+            "BRAWLER\nHP 40  Speed 0\nMelee\nDamage 12\nTank, soaks hits");
+        DrawCompanionCard(sw * 0.70f, y, cardW, cardH, CompanionType.Trickster,
+            "TRICKSTER\nHP 25  Speed +3\nFlexible 1-2 tiles\nDamage 5\nActs TWICE per turn");
+    }
+
+    /// <summary>
+    /// One card on the companion-pick screen: a portrait of the actual in-game sprite
+    /// (upscaled, point-filtered) sits above the stat text. The whole card is one big
+    /// hover-fill button; clicking anywhere on it commits the pick.
+    /// </summary>
+    void DrawCompanionCard(float x, float y, float w, float h, CompanionType type, string text)
+    {
+        // The button covers the whole card so click-anywhere works and the hover-fill
+        // background renders behind both the portrait and the text consistently.
+        // The button label is left empty here — we draw the text ourselves below the
+        // portrait so layout doesn't get squashed by Unity's auto-centering.
+        if (Btn(new Rect(x, y, w, h), "", _panelButtonStyle))
+            GameManager.Instance.OnCompanionChosen(type);
+
+        // Portrait — point-filtered upscale of the 32×32 entity sprite, centered in the
+        // upper third of the card. We render WITH the same UV unwrap used by the turn-
+        // order strip so packed sprite atlases (if any) still pick the right region.
+        var tex = GetCompanionPortrait(type);
+        float portraitH = h * 0.42f;
+        float portraitW = portraitH;                       // square box
+        float px = x + (w - portraitW) * 0.5f;
+        float py = y + 14f;
+        if (tex != null)
         {
-            GameManager.Instance.OnCompanionChosen(CompanionType.Drone);
+            // Keep colour true (no GUI.color tint) and preserve aspect by using the full UV.
+            GUI.DrawTextureWithTexCoords(
+                new Rect(px, py, portraitW, portraitH),
+                tex, new Rect(0, 0, 1, 1));
         }
 
-        if (Btn(new Rect(sw * 0.39f, y, cardW, cardH),
-            "BRAWLER\n\nHP 40  Speed 0\nMelee\nDamage 12\n\nTank, soaks hits", _panelButtonStyle))
-        {
-            GameManager.Instance.OnCompanionChosen(CompanionType.Brawler);
-        }
-
-        if (Btn(new Rect(sw * 0.70f, y, cardW, cardH),
-            "TRICKSTER\n\nHP 25  Speed +3\nFlexible 1-2 tiles\nDamage 5\n\nActs TWICE per turn", _panelButtonStyle))
-        {
-            GameManager.Instance.OnCompanionChosen(CompanionType.Trickster);
-        }
+        // Stat text — drawn just below the portrait. Use CalcHeight so the rect is
+        // EXACTLY as tall as the wrapped text needs to be — no empty space below it
+        // (the previous full-card rect left a big gap under the last line).
+        const float TEXT_GAP = 8f;
+        float textW = w - 20f;
+        float textH = _companionCardText.CalcHeight(new GUIContent(text), textW);
+        GUI.Label(
+            new Rect(x + 10, py + portraitH + TEXT_GAP, textW, textH),
+            text, _companionCardText);
     }
 
     void DrawEndScreen(string message, Color tint)

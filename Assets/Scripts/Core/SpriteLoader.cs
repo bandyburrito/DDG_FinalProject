@@ -10,12 +10,17 @@ public static class SpriteLoader
 {
     public const float PIXELS_PER_UNIT = 16f;
 
+    // Pivot for the new tile art: the diamond top face is centred in the lower-middle
+    // of the 32×32 canvas (art was redrawn low to leave the upper portion clear for
+    // entities/objects stacked on top), so the world-anchor pivot sits around y=0.5.
     public static Sprite LoadTile(string name) =>
-        BuildSprite($"Tiles/{name}", new Vector2(0.5f, 0.75f));
+        BuildSprite($"Tiles/{name}", new Vector2(0.5f, 0.5f));
 
     public static Sprite LoadEntity(string name) =>
         BuildSprite($"Entities/{name}", new Vector2(0.5f, 0f));
 
+    // Overlay highlights keep the OLD pivot — they snap to the procedural diamond shape
+    // (built in PlaceholderSetup) which is still drawn with the top-face pivot at 0.75.
     public static Sprite LoadOverlay(string name) =>
         BuildSprite($"Tiles/{name}", new Vector2(0.5f, 0.75f));
 

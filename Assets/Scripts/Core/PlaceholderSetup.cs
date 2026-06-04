@@ -42,7 +42,17 @@ public class PlaceholderSetup : MonoBehaviour
         grid.obstacleTilePrefab    = MakeTilePrefab("Obstacle", "obstacle",    Hex("6B4226"));
         grid.spikeTrapPrefab       = MakeTilePrefab("Spike",    "spike",       Hex("FF8C00"));
         grid.pitTrapPrefab         = MakeTilePrefab("Pit",      "pit",         Hex("0A0A0A"));
-        grid.slowZonePrefab        = MakeTilePrefab("SlowZone", "slow",        Hex("8B00FF"));
+        // Slow zone now uses the sunken-hole art (was its own dedicated sprite).
+        grid.slowZonePrefab        = MakeTilePrefab("SlowZone", "pit",         Hex("8B00FF"));
+
+        // Ground tiles randomly pick between these two sprites per tile for visual variety —
+        // both render as fully walkable floor, just visually different. Loaded from the
+        // tile prefabs so we don't double-load the Resources entries.
+        grid.groundSpriteVariants = new[]
+        {
+            SpriteLoader.LoadTile("ground"),
+            SpriteLoader.LoadTile("slow"),     // the textured floor we just renamed
+        };
         grid.moveHighlightPrefab   = MakeOverlayPrefab("MoveHL",   "ground", new Color(0.2f, 0.6f, 1f, 0.55f));
         grid.attackHighlightPrefab = MakeOverlayPrefab("AtkHL",    "ground", new Color(1f, 0.4f, 0.0f, 0.7f));  // bright orange — won't blend into red enemies
         grid.telegraphAttackPrefab = MakeOverlayPrefab("TelAtk",   "ground", new Color(1f, 0.85f, 0.1f, 0.6f));

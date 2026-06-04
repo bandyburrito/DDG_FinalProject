@@ -170,6 +170,11 @@ public class RoomGenerator : MonoBehaviour
         int w = GridManager.Instance.width;
         int h = GridManager.Instance.height;
 
+        // Find the largest connected playable area — voids + obstacles can split the room
+        // into pockets, and the player + enemies must all spawn in the SAME pocket so they
+        // can reach each other. Without this, you can get trapped behind a void wall.
+        var mainArea = ComputeLargestConnectedComponent();
+
         // All edge tiles
         var edges = new List<Vector2Int>();
         for (int x = border; x < w - border; x++)
@@ -186,8 +191,25 @@ public class RoomGenerator : MonoBehaviour
         edges.RemoveAll(p =>
         {
             var tile = GridManager.Instance.GetTile(p);
-            return tile != null && tile.type != TileType.Empty;
+            // Reject any tile that's not Empty, not in the main playable area, or that
+            // has no walkable cardinal neighbour (an entity spawned there couldn't move
+            // on turn 1 — the "trapped at spawn" symptom).
+            if (tile == null || tile.type != TileType.Empty) return true;
+            if (!mainArea.Contains(p)) return true;
+            return !HasWalkableNeighbour(p);
         });
+
+        // If the edges came up empty (extremely irregular room shape), fall back to ANY
+        // tile in the main area with a walkable neighbour — better than no spawns at all.
+        if (edges.Count == 0)
+        {
+            foreach (var p in mainArea)
+            {
+                var tile = GridManager.Instance.GetTile(p);
+                if (tile != null && tile.type == TileType.Empty && HasWalkableNeighbour(p))
+                    edges.Add(p);
+            }
+        }
 
         // Shuffle
         for (int i = edges.Count - 1; i > 0; i--)
@@ -211,6 +233,66 @@ public class RoomGenerator : MonoBehaviour
         }
     }
 
+    /// <summary>True if at least one cardinal neighbour of <paramref name="p"/> is NOT
+    /// an Obstacle, Void, or out-of-bounds — i.e. the entity at p has somewhere to walk.</summary>
+    private static bool HasWalkableNeighbour(Vector2Int p)
+    {
+        foreach (var nb in GridManager.Instance.GetCardinalNeighbours(p))
+        {
+            var t = GridManager.Instance.GetTile(nb);
+            if (t == null) continue;
+            if (t.type == TileType.Obstacle || t.type == TileType.Void) continue;
+            return true;
+        }
+        return false;
+    }
+
+    /// <summary>
+    /// Flood-fill across non-blocking tiles and return the largest pocket — the only
+    /// area we'll spawn into. Treats Obstacle and Void as walls; everything else (Empty +
+    /// traps) is walkable. Used to guarantee the player and enemies can actually reach
+    /// each other even after void-erosion carves the room.
+    /// </summary>
+    private static HashSet<Vector2Int> ComputeLargestConnectedComponent()
+    {
+        int w = GridManager.Instance.width;
+        int h = GridManager.Instance.height;
+        var visited = new HashSet<Vector2Int>();
+        HashSet<Vector2Int> largest = new();
+
+        for (int x = 0; x < w; x++)
+        for (int y = 0; y < h; y++)
+        {
+            var start = new Vector2Int(x, y);
+            if (visited.Contains(start)) continue;
+            var startTile = GridManager.Instance.GetTile(start);
+            if (startTile == null) continue;
+            if (startTile.type == TileType.Obstacle || startTile.type == TileType.Void) continue;
+
+            var component = new HashSet<Vector2Int> { start };
+            var queue     = new Queue<Vector2Int>();
+            queue.Enqueue(start);
+            visited.Add(start);
+
+            while (queue.Count > 0)
+            {
+                var cur = queue.Dequeue();
+                foreach (var nb in GridManager.Instance.GetCardinalNeighbours(cur))
+                {
+                    if (visited.Contains(nb)) continue;
+                    var t = GridManager.Instance.GetTile(nb);
+                    if (t == null) continue;
+                    if (t.type == TileType.Obstacle || t.type == TileType.Void) continue;
+                    visited.Add(nb);
+                    component.Add(nb);
+                    queue.Enqueue(nb);
+                }
+            }
+            if (component.Count > largest.Count) largest = component;
+        }
+        return largest;
+    }
+
     public Vector2Int GetEnemySpawnPoint()
     {
         if (_spawnPool.Count == 0) return new Vector2Int(0, 0);
@@ -219,12 +301,23 @@ public class RoomGenerator : MonoBehaviour
         return pos;
     }
 
-    /// <summary>Find an empty tile adjacent to the player for companion spawn.</summary>
+    /// <summary>Find an empty tile adjacent to the player for companion spawn. Prefers
+    /// tiles in the main playable area with a walkable neighbour, so a newly-spawned
+    /// companion can't end up stranded behind a void or unable to move on its first turn.</summary>
     public Vector2Int GetCompanionSpawnNearPlayer()
     {
         var playerPos = PlayerController.Instance.GridPos;
+        var mainArea  = ComputeLargestConnectedComponent();
+
+        // First pass: in-area neighbour with somewhere to walk.
+        foreach (var nb in GridManager.Instance.GetAllNeighbours8(playerPos))
+            if (GridManager.Instance.IsWalkable(nb) && mainArea.Contains(nb) && HasWalkableNeighbour(nb))
+                return nb;
+
+        // Second pass: any walkable neighbour (better than no companion at all).
         foreach (var nb in GridManager.Instance.GetAllNeighbours8(playerPos))
             if (GridManager.Instance.IsWalkable(nb)) return nb;
-        return playerPos + Vector2Int.right; // fallback
+
+        return playerPos + Vector2Int.right; // last-resort fallback
     }
 }
