@@ -49,10 +49,9 @@ public class AudioManager : MonoBehaviour
 
     // ── Sound effects (one-shots) ────────────────────────────────────────────
     private AudioSource _sfx;          // separate source so SFX never disturb the music loop
-    private AudioClip _clickClip;      // any UI / move click
+    private AudioClip _clickClip;      // UI / move / attack click (only on real actions)
     private AudioClip _hitClip;        // player takes damage
     private AudioClip _powerUpClip;    // upgrade chosen
-    private AudioClip _laserClip;      // player ranged attack
 
     // Fade-in state. _fadeT counts up from 0 to FadeDuration after a track change.
     private float _fadeT = FadeDuration;   // start "complete" so nothing fades pre-play
@@ -82,7 +81,6 @@ public class AudioManager : MonoBehaviour
         _clickClip   = Resources.Load<AudioClip>("Audio/click");
         _hitClip     = Resources.Load<AudioClip>("Audio/hitHurt");
         _powerUpClip = Resources.Load<AudioClip>("Audio/powerUp");
-        _laserClip   = Resources.Load<AudioClip>("Audio/laserShoot");
 
         _sfx = gameObject.AddComponent<AudioSource>();
         _sfx.loop         = false;
@@ -99,7 +97,6 @@ public class AudioManager : MonoBehaviour
     public static void PlayClick()    => Instance?.Play(Instance._clickClip,   0.55f);
     public static void PlayHit()      => Instance?.Play(Instance._hitClip,     0.85f);
     public static void PlayPowerUp()  => Instance?.Play(Instance._powerUpClip, 0.80f);
-    public static void PlayLaser()    => Instance?.Play(Instance._laserClip,   0.70f);
 
     void Update()
     {

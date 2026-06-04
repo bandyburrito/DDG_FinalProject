@@ -102,12 +102,16 @@ public class PlayerController : Entity
 
         if (!HasMoved && _validMoveTiles.Contains(gridPos))
         {
+            AudioManager.PlayClick();            // click only fires on a valid action
             StartCoroutine(WalkPath(gridPos));   // animated walk, no longer a teleport
             return;
         }
 
         if (HasMoved && !HasActed && _validAttackTiles.Contains(gridPos))
+        {
+            AudioManager.PlayClick();
             PerformAttack(gridPos);
+        }
     }
 
     /// <summary>
@@ -188,7 +192,7 @@ public class PlayerController : Entity
         HasActed = true;
 
         if (currentMode == AttackMode.Melee)
-            CombatSystem.Instance.PlayerMeleeAttack(GridPos);
+            CombatSystem.Instance.PlayerMeleeAttack(GridPos, clickedPos);
         else
             CombatSystem.Instance.PlayerRangedAttack(GridPos, clickedPos);
 

@@ -52,10 +52,6 @@ public class PlaceholderUI : MonoBehaviour
         var gm = GameManager.Instance;
         var nowState = gm?.State ?? GameState.MainMenu;
 
-        // Global UI click — any left click anywhere (menu buttons, gameplay tiles) gets
-        // the click cue. Action sounds (laser on ranged, power-up on upgrade) layer on top.
-        if (Input.GetMouseButtonDown(0)) AudioManager.PlayClick();
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             // Escape closes the settings overlay first.
@@ -71,6 +67,15 @@ public class PlaceholderUI : MonoBehaviour
         }
 
         _prevState = nowState;
+    }
+
+    /// <summary>GUI.Button that plays the click SFX ONLY when actually pressed — so the
+    /// click cue fires for real actions, never for dead clicks on empty space.</summary>
+    bool Btn(Rect r, string label, GUIStyle style)
+    {
+        bool pressed = GUI.Button(r, label, style);
+        if (pressed) AudioManager.PlayClick();
+        return pressed;
     }
 
     void InitStyles()
@@ -383,17 +388,17 @@ public class PlaceholderUI : MonoBehaviour
         float btnGap = 18;   // slightly more breathing room between Play / Quit
         float btnY  = titleY + 150;
 
-        if (GUI.Button(new Rect(padX, btnY, btnW, btnH), "Play", _menuButtonStyle))
+        if (Btn(new Rect(padX, btnY, btnW, btnH), "Play", _menuButtonStyle))
             GameManager.Instance.StartNewGame();
 
-        if (GUI.Button(new Rect(padX, btnY + (btnH + btnGap), btnW, btnH), "Quit", _menuButtonStyle))
+        if (Btn(new Rect(padX, btnY + (btnH + btnGap), btnW, btnH), "Quit", _menuButtonStyle))
             GameManager.Instance.QuitGame();
 
         // Settings — small, muted, in the bottom-left (where the placeholder box
         // sat in your Figma mockup). Doesn't compete with Play/Quit for attention
         // but stays one click away from the menu.
         float setW = 200, setH = 38;
-        if (GUI.Button(new Rect(padX, sh - setH - sh * 0.06f, setW, setH),
+        if (Btn(new Rect(padX, sh - setH - sh * 0.06f, setW, setH),
                         "Settings", _menuSmallButtonStyle))
         {
             _showSettings = true;
@@ -476,19 +481,19 @@ public class PlaceholderUI : MonoBehaviour
         float bw = 220, bh = 48, bx = (sw - bw) * 0.5f;
         float by = sh * 0.36f;
 
-        if (GUI.Button(new Rect(bx, by, bw, bh), "Resume", _panelButtonStyle))
+        if (Btn(new Rect(bx, by, bw, bh), "Resume", _panelButtonStyle))
             GameManager.Instance.SetPaused(false);
 
-        if (GUI.Button(new Rect(bx, by + 60, bw, bh), "Settings", _panelButtonStyle))
+        if (Btn(new Rect(bx, by + 60, bw, bh), "Settings", _panelButtonStyle))
             _showSettings = true;
 
-        if (GUI.Button(new Rect(bx, by + 120, bw, bh), "Restart Run", _panelButtonStyle))
+        if (Btn(new Rect(bx, by + 120, bw, bh), "Restart Run", _panelButtonStyle))
             GameManager.Instance.RestartGame();
 
-        if (GUI.Button(new Rect(bx, by + 180, bw, bh), "Main Menu", _panelButtonStyle))
+        if (Btn(new Rect(bx, by + 180, bw, bh), "Main Menu", _panelButtonStyle))
             GameManager.Instance.ReturnToMainMenu();
 
-        if (GUI.Button(new Rect(bx, by + 240, bw, bh), "Quit", _panelButtonStyle))
+        if (Btn(new Rect(bx, by + 240, bw, bh), "Quit", _panelButtonStyle))
             GameManager.Instance.QuitGame();
     }
 
@@ -543,14 +548,14 @@ public class PlaceholderUI : MonoBehaviour
         // Render the toggle as a right-aligned [ ON ] / [ OFF ] hover button instead of
         // the default checkbox — fits the monospace theme better.
         string toggleLabel = fs ? "[ ON ]" : "[ OFF ]";
-        if (GUI.Button(new Rect(innerX + innerW - 90, y - 6, 90, 34), toggleLabel, _menuSmallButtonStyle))
+        if (Btn(new Rect(innerX + innerW - 90, y - 6, 90, 34), toggleLabel, _menuSmallButtonStyle))
         {
             if (gm != null) gm.SetFullscreen(!fs);
         }
         y += 64;
 
         // ── Back ─────────────────────────────────────────────────────────────
-        if (GUI.Button(new Rect(innerX, py + panelH - 64, 160, 44), "Back", _menuButtonStyle))
+        if (Btn(new Rect(innerX, py + panelH - 64, 160, 44), "Back", _menuButtonStyle))
             _showSettings = false;
     }
 
@@ -593,12 +598,12 @@ public class PlaceholderUI : MonoBehaviour
             }
         }
 
-        // Attack mode (bottom right) — flag the piercing-line evolution once unlocked
+        // Attack mode (bottom right) — flag the AoE evolution once unlocked
         string mode;
         if (player.currentMode == AttackMode.Melee)
-            mode = "Melee [Q]";
+            mode = UpgradeManager.Instance.MeleeCircleUnlocked ? "Melee·CIRCLE [Q]" : "Melee [Q]";
         else
-            mode = UpgradeManager.Instance.RangedLineUnlocked ? "Ranged·LINE [Q]" : "Ranged [Q]";
+            mode = UpgradeManager.Instance.RangedAoeUnlocked ? "Ranged·BLAST [Q]" : "Ranged [Q]";
         GUI.Label(new Rect(sw - 210, Screen.height - 40, 200, 22), $"Attack: {mode}", _hudLabelRight);
 
         // Multipliers (bottom left)
@@ -786,23 +791,28 @@ public class PlaceholderUI : MonoBehaviour
         float mel = UpgradeManager.Instance.MeleeDamageMultiplier;
         float ran = UpgradeManager.Instance.RangedDamageMultiplier;
 
-        if (GUI.Button(new Rect(sw * 0.2f, sh * 0.45f, sw * 0.25f, 90),
-            $"+25% Melee Damage\nx{mel:F2} -> x{mel + 0.25f:F2}", _panelButtonStyle))
+        // Each button shows progress toward its area-of-effect unlock.
+        if (Btn(new Rect(sw * 0.2f, sh * 0.45f, sw * 0.25f, 90),
+            $"+25% Melee Damage\nx{mel:F2} -> x{mel + 0.25f:F2}\n{AoeHint(UpgradeManager.Instance.MeleeUpgradeCount, UpgradeManager.MELEE_CIRCLE_THRESHOLD, UpgradeManager.Instance.MeleeCircleUnlocked, "CIRCLE")}",
+            _panelButtonStyle))
         {
             UpgradeManager.Instance.ApplyUpgrade(UpgradeType.Melee);
         }
 
-        // Ranged button also shows progress toward the piercing-line unlock.
-        int rc        = UpgradeManager.Instance.RangedUpgradeCount;
-        int threshold = UpgradeManager.RANGED_LINE_THRESHOLD;
-        string lineHint = UpgradeManager.Instance.RangedLineUnlocked
-            ? "LINE shot active"
-            : (rc + 1 >= threshold ? "unlocks LINE shot!" : $"LINE shot in {threshold - rc - 1} more");
-        if (GUI.Button(new Rect(sw * 0.55f, sh * 0.45f, sw * 0.25f, 90),
-            $"+25% Ranged Damage\nx{ran:F2} -> x{ran + 0.25f:F2}\n{lineHint}", _panelButtonStyle))
+        if (Btn(new Rect(sw * 0.55f, sh * 0.45f, sw * 0.25f, 90),
+            $"+25% Ranged Damage\nx{ran:F2} -> x{ran + 0.25f:F2}\n{AoeHint(UpgradeManager.Instance.RangedUpgradeCount, UpgradeManager.RANGED_AOE_THRESHOLD, UpgradeManager.Instance.RangedAoeUnlocked, "3×3 BLAST")}",
+            _panelButtonStyle))
         {
             UpgradeManager.Instance.ApplyUpgrade(UpgradeType.Ranged);
         }
+    }
+
+    /// <summary>Builds the "AoE in N more / unlocks AoE! / AoE active" progress line.</summary>
+    static string AoeHint(int count, int threshold, bool unlocked, string name)
+    {
+        if (unlocked)            return $"{name} active";
+        if (count + 1 >= threshold) return $"unlocks {name}!";
+        return $"{name} in {threshold - count - 1} more";
     }
 
     void DrawCompanionScreen()
@@ -816,19 +826,19 @@ public class PlaceholderUI : MonoBehaviour
         float cardH = sh * 0.35f;
         float y = sh * 0.4f;
 
-        if (GUI.Button(new Rect(sw * 0.08f, y, cardW, cardH),
+        if (Btn(new Rect(sw * 0.08f, y, cardW, cardH),
             "DRONE\n\nHP 20  Speed +2\nRanged 2-4 tiles\nDamage 6\n\nGlass cannon", _panelButtonStyle))
         {
             GameManager.Instance.OnCompanionChosen(CompanionType.Drone);
         }
 
-        if (GUI.Button(new Rect(sw * 0.39f, y, cardW, cardH),
+        if (Btn(new Rect(sw * 0.39f, y, cardW, cardH),
             "BRAWLER\n\nHP 40  Speed 0\nMelee\nDamage 12\n\nTank, soaks hits", _panelButtonStyle))
         {
             GameManager.Instance.OnCompanionChosen(CompanionType.Brawler);
         }
 
-        if (GUI.Button(new Rect(sw * 0.70f, y, cardW, cardH),
+        if (Btn(new Rect(sw * 0.70f, y, cardW, cardH),
             "TRICKSTER\n\nHP 25  Speed +3\nFlexible 1-2 tiles\nDamage 5\n\nActs TWICE per turn", _panelButtonStyle))
         {
             GameManager.Instance.OnCompanionChosen(CompanionType.Trickster);
@@ -842,7 +852,7 @@ public class PlaceholderUI : MonoBehaviour
         GUI.contentColor = tint;
         GUI.Label(new Rect(0, sh * 0.3f, sw, 50), message, _titleStyle);
         GUI.contentColor = Color.white;
-        if (GUI.Button(new Rect(sw / 2 - 90, sh * 0.55f, 180, 50), "Restart", _panelButtonStyle))
+        if (Btn(new Rect(sw / 2 - 90, sh * 0.55f, 180, 50), "Restart", _panelButtonStyle))
             GameManager.Instance.RestartGame();
     }
 }

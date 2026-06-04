@@ -13,11 +13,14 @@ public class UpgradeManager : MonoBehaviour
     public int MeleeUpgradeCount  { get; private set; }
     public int RangedUpgradeCount { get; private set; }
 
-    /// <summary>Ranged upgrades needed to unlock the piercing-line shot.</summary>
-    public const int RANGED_LINE_THRESHOLD = 3;
+    /// <summary>Upgrades needed to unlock each attack's area-of-effect form.</summary>
+    public const int MELEE_CIRCLE_THRESHOLD = 3;   // single-target → full 8-tile circle
+    public const int RANGED_AOE_THRESHOLD   = 3;   // single-target → 3×3 blast
 
-    /// <summary>True once ranged has been upgraded enough to fire a piercing line.</summary>
-    public bool RangedLineUnlocked => RangedUpgradeCount >= RANGED_LINE_THRESHOLD;
+    /// <summary>True once melee upgrades reach the full-circle threshold.</summary>
+    public bool MeleeCircleUnlocked => MeleeUpgradeCount  >= MELEE_CIRCLE_THRESHOLD;
+    /// <summary>True once ranged upgrades reach the 3×3 blast threshold.</summary>
+    public bool RangedAoeUnlocked   => RangedUpgradeCount >= RANGED_AOE_THRESHOLD;
 
     private const float UPGRADE_AMOUNT = 0.25f;
 
@@ -34,8 +37,10 @@ public class UpgradeManager : MonoBehaviour
         if (type == UpgradeType.Melee)  { MeleeDamageMultiplier  += UPGRADE_AMOUNT; MeleeUpgradeCount++;  }
         if (type == UpgradeType.Ranged) { RangedDamageMultiplier += UPGRADE_AMOUNT; RangedUpgradeCount++; }
 
-        if (type == UpgradeType.Ranged && RangedUpgradeCount == RANGED_LINE_THRESHOLD)
-            Debug.Log("Ranged upgrade 3/3 — piercing LINE shot unlocked!");
+        if (type == UpgradeType.Melee  && MeleeUpgradeCount  == MELEE_CIRCLE_THRESHOLD)
+            Debug.Log("Melee 3/3 — full CIRCLE strike unlocked!");
+        if (type == UpgradeType.Ranged && RangedUpgradeCount == RANGED_AOE_THRESHOLD)
+            Debug.Log("Ranged 3/3 — 3×3 BLAST unlocked!");
 
         Debug.Log($"Upgrade {type}: melee x{MeleeDamageMultiplier:F2}, ranged x{RangedDamageMultiplier:F2}");
         GameManager.Instance.OnUpgradeChosen();
