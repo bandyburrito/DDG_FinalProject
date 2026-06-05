@@ -59,4 +59,4 @@ At **3 ranged upgrades** your shot detonates in a 3×3 blast on landing.
 
 ---
 
-*HSLU DDG module project — Week 6 submission.*
+
