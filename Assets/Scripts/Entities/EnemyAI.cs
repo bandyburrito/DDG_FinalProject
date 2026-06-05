@@ -137,7 +137,14 @@ public class EnemyAI : Entity
         if (!IsAlive) yield break;
         yield return new WaitForSeconds(0.15f);
 
-        // Attack the telegraphed tile (committed — even if target moved away)
+        // Attack phase.
+        // Primary: try the telegraphed tile if WillAttack was planned and range holds.
+        // Fallback: if the enemy is a melee type and ended up adjacent to ANY player-faction
+        //   entity (e.g. the path was blocked mid-walk so they stopped one tile short of
+        //   the planned position) — attack that entity anyway. This prevents the "walks
+        //   right next to you but does nothing" silent-miss when movement is obstructed.
+        bool attacked = false;
+
         if (WillAttack)
         {
             int dist = enemyType == EnemyType.Sniper
@@ -160,8 +167,24 @@ public class EnemyAI : Entity
                         CombatSystem.Instance.EnemyRangedAttack(this, occupant);
                     else
                         CombatSystem.Instance.EnemyMeleeAttack(this, occupant);
+                    attacked = true;
                 }
-                // else: telegraphed tile is empty — attack misses (player dodged)
+            }
+        }
+
+        // Fallback for melee units: scan all 8 neighbours for a player-faction target.
+        // Fires only if the primary attack didn't land — covers the case where the enemy
+        // walked to a different tile than planned (path blocked) but is still adjacent.
+        if (!attacked && enemyType != EnemyType.Sniper)
+        {
+            foreach (var nb in GridManager.Instance.GetAllNeighbours8(GridPos))
+            {
+                var t = GridManager.Instance.GetTile(nb);
+                if (t?.occupant != null && t.occupant.faction == Faction.Player && t.occupant.IsAlive)
+                {
+                    CombatSystem.Instance.EnemyMeleeAttack(this, t.occupant);
+                    break;   // one attack per turn
+                }
             }
         }
     }

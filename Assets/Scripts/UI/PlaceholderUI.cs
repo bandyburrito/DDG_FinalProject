@@ -413,17 +413,16 @@ public class PlaceholderUI : MonoBehaviour
         GUI.DrawTexture(new Rect(0, 0, sw, sh), Texture2D.whiteTexture);
         GUI.color = Color.white;
 
-        // ── Shoki portrait — drawn first so the left text overlays cleanly ───
-        var portrait = GetShokiPortrait();
-        if (portrait != null)
-        {
-            float pH = sh * 0.7f;
-            float pW = pH;                                  // square source PNG
-            float pX = sw - pW - sw * 0.05f;                // right edge inset
-            float pY = (sh - pH) * 0.5f;
-            // ScaleMode.ScaleToFit + point filtering keeps the pixel art crisp at any size
-            GUI.DrawTexture(new Rect(pX, pY, pW, pH), portrait, ScaleMode.ScaleToFit, true);
-        }
+        // ── Crew portrait — Shoki + 3 companions, right half of the screen ─────
+        // Layout: a loose group shot so all four characters are visible.
+        //   Brawler  — back left,  slightly taller, tilted inward (biggest companion)
+        //   Shoki    — center,     tallest, slightly forward (the hero)
+        //   Drone    — front left, smallest, crouched lower (glass cannon energy)
+        //   Trickster— back right, medium,  poking out behind Shoki
+        //
+        // "Silly" effect: each character is at a different Y so they look like they
+        // wandered into frame, not like a team photo at attention.
+        DrawMenuCrewShot(sw, sh);
 
         // ── Left column: title + subtitle + buttons ─────────────────────────
         float padX  = sw * 0.06f;
@@ -455,6 +454,53 @@ public class PlaceholderUI : MonoBehaviour
                         "Settings", _menuSmallButtonStyle))
         {
             _showSettings = true;
+        }
+    }
+
+    /// <summary>
+    /// Draws all four player-faction characters across the right half of the main menu
+    /// as a loose, slightly chaotic group — each at a different size and vertical
+    /// offset so it reads as a crew rather than a lineup. Characters without a loaded
+    /// sprite are silently skipped so a missing asset never breaks the menu.
+    ///
+    /// Slot layout (left → right in the right-half zone):
+    ///   [0] Drone     — tiny, very low (crouching energy)
+    ///   [1] Brawler   — big and tall, slightly back
+    ///   [2] Shoki     — biggest, center, slightly forward (the hero)
+    ///   [3] Trickster — medium, peeking from the far right behind Shoki
+    /// </summary>
+    void DrawMenuCrewShot(float sw, float sh)
+    {
+        // 2×2 grid on the right side, positioned high so they sit above the midline.
+        // Row 0 (back row): Brawler left, Trickster right — slightly smaller, higher up.
+        // Row 1 (front row): Drone left, Shoki right — larger, lower so they overlap.
+        float cellSize = sh * 0.40f;   // bigger sprites
+        float gridW    = cellSize * 2f;
+        float gridX    = sw - gridW - sw * 0.04f;   // right-aligned with a small inset
+        float gridTopY = sh * 0.14f;                // lower — sits in the mid-upper area
+
+        float backSize  = cellSize * 0.80f;   // back row slightly smaller (depth illusion)
+        float frontSize = cellSize * 1.00f;
+
+        // Bottom-align every sprite to its row baseline so all feet sit on the same
+        // horizontal line — stops smaller sprites looking like they're floating higher.
+        float backBaseline  = gridTopY + backSize;          // bottom edge of back row
+        float frontBaseline = gridTopY + backSize * 0.60f + frontSize; // front row overlaps back
+
+        // (tex, x, size, baseline) — y is computed as baseline - size
+        var grid = new (Texture2D tex, float x, float size, float baseline)[]
+        {
+            (GetCompanionPortrait(CompanionType.Brawler),   gridX,            backSize,  backBaseline),
+            (GetCompanionPortrait(CompanionType.Trickster), gridX + cellSize, backSize,  backBaseline),
+            (GetCompanionPortrait(CompanionType.Drone),     gridX,            frontSize, frontBaseline),
+            (GetShokiPortrait(),                            gridX + cellSize, frontSize, frontBaseline),
+        };
+
+        foreach (var s in grid)
+        {
+            if (s.tex == null) continue;
+            float y = s.baseline - s.size;   // bottom-align: top = baseline - height
+            GUI.DrawTexture(new Rect(s.x, y, s.size, s.size), s.tex, ScaleMode.ScaleToFit, true);
         }
     }
 
